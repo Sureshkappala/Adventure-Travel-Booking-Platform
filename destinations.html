@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adventures | Destinations Showcase</title>
+  <!-- FontAwesome for Premium Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Core stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ==========================================================================
+       Header / Navigation Bar
+       ========================================================================== -->
+  <header class="header scrolled"> <!-- default solid for subpages -->
+    <div class="container header-container">
+      <a href="index.html" class="logo" id="headerLogo">
+        <img src="images/logo.webp" alt="Logo" class="logo-img">
+      </a>
+      
+      <!-- Drawer Menu (acts as navbar on desktop and mobile drawer) -->
+      <nav class="navbar">
+        <div class="drawer-header">
+          <a href="index.html" class="logo">
+            <img src="images/logo.webp" alt="Logo" class="logo-img">
+            
+          </a>
+          <button class="drawer-close" aria-label="Close Menu"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        
+        <div class="drawer-search">
+          <div style="position: relative; width: 100%;">
+            <input type="text" placeholder="Search destinations..." onkeyup="if(event.key === 'Enter') { location.href='destinations.html?search=' + encodeURIComponent(this.value); }">
+            <i class="fa-solid fa-magnifying-glass" style="position: absolute; right: 1rem; top: 50%; transform: translateY(-50%); color: var(--color-text-muted); pointer-events: none;"></i>
+          </div>
+        </div>
+
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-home">Home</a></li>
+          <li><a href="destinations.html" class="nav-destinations active">Destinations</a></li>
+          <li><a href="packages.html" class="nav-packages">Packages</a></li>
+          <li><a href="about.html" class="nav-about">About Us</a></li>
+          <li><a href="contact.html" class="nav-contact">Contact</a></li>
+        </ul>
+        
+        <div class="nav-mobile-cta">
+          <a href="login.html" class="btn btn-secondary">Login</a>
+          <a href="contact.html" class="btn btn-primary">Book Now</a>
+        </div>
+        
+        <div class="drawer-contact-info">
+          <h5>Contact Info</h5>
+          <p><i class="fa-solid fa-phone"></i> +1 (800) 555-ADVENTURES</p>
+          <p><i class="fa-solid fa-envelope"></i> expeditions@adventures.com</p>
+          <p><i class="fa-solid fa-location-dot"></i> 800 Wilderness Ridge, Boulder, CO</p>
+        </div>
+      </nav>
+      
+      <div class="nav-controls">
+        <a href="login.html" class="btn btn-secondary btn-sm"><i class="fa-solid fa-right-to-bracket"></i> Login</a>
+        <a href="contact.html" class="btn btn-primary btn-sm">Book Now</a>
+        <button class="menu-toggle" aria-label="Toggle Menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       Subpage Hero
+       ========================================================================== -->
+  <section class="subpage-hero" style="background-image: url('images/hero-bg.webp');">
+    <div class="subpage-hero-content">
+      <span class="section-subtitle">Choose Your Landscape</span>
+      <h1>Expedition Hotspots</h1>
+      <p>Discover hand-picked destinations carefully mapped for maximum adventure and safety.</p>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       Destinations Catalog
+       ========================================================================== -->
+  <section class="section" id="destinations-showcase">
+    <div class="container">
+      
+      <!-- Category Filter Bar -->
+      <div class="filter-container fade-in-element">
+        <button class="filter-btn active" data-filter="all">All Landscapes</button>
+        <button class="filter-btn" data-filter="mountain">Mountains</button>
+        <button class="filter-btn" data-filter="safari">Safari Plains</button>
+        <button class="filter-btn" data-filter="tropical">Tropical Coastal</button>
+      </div>
+
+      <!-- Destinations Grid -->
+      <div class="destinations-grid">
+        
+        <!-- Dest 1 -->
+        <div class="dest-card filterable-item zoom-in-element" data-category="mountain" onclick="location.href='contact.html?dest=Swiss Alps'">
+          <img src="images/dest-1.webp" alt="Swiss Alps peak hiking" class="dest-img" loading="lazy">
+          <div class="dest-overlay">
+            <span class="dest-tag">Mountain</span>
+            <h3 class="dest-title">Swiss Alps</h3>
+            <div class="dest-meta">
+              <span><i class="fa-solid fa-clock"></i> 8 Days</span>
+              <span><i class="fa-solid fa-hiking"></i> Demanding</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dest 2 -->
+        <div class="dest-card filterable-item zoom-in-element" data-category="safari" onclick="location.href='contact.html?dest=Serengeti Safari'">
+          <img src="images/dest-2.webp" alt="Serengeti Savannah cheetah" class="dest-img" loading="lazy">
+          <div class="dest-overlay">
+            <span class="dest-tag">Safari</span>
+            <h3 class="dest-title">Serengeti Plains</h3>
+            <div class="dest-meta">
+              <span><i class="fa-solid fa-clock"></i> 6 Days</span>
+              <span><i class="fa-solid fa-camera"></i> Moderate</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dest 3 -->
+        <div class="dest-card filterable-item zoom-in-element" data-category="tropical" onclick="location.href='contact.html?dest=Bali Explorer'">
+          <img src="images/dest-3.webp" alt="Bali ancient water temple temple" class="dest-img" loading="lazy">
+          <div class="dest-overlay">
+            <span class="dest-tag">Tropical</span>
+            <h3 class="dest-title">Bali Explorer</h3>
+            <div class="dest-meta">
+              <span><i class="fa-solid fa-clock"></i> 10 Days</span>
+              <span><i class="fa-solid fa-water"></i> Easy</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dest 4 -->
+        <div class="dest-card filterable-item zoom-in-element" data-category="safari" onclick="location.href='contact.html?dest=Sahara Desert'">
+          <img src="images/gallery-4.webp" alt="Balloons hovering over red dunes" class="dest-img" loading="lazy">
+          <div class="dest-overlay">
+            <span class="dest-tag">Safari</span>
+            <h3 class="dest-title">Sahara Desert</h3>
+            <div class="dest-meta">
+              <span><i class="fa-solid fa-clock"></i> 5 Days</span>
+              <span><img src="images/logo.webp" alt="Logo" class="logo-img"> Moderate</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dest 5 -->
+        <div class="dest-card filterable-item zoom-in-element" data-category="tropical" onclick="location.href='contact.html?dest=Great Barrier Reef'">
+          <img src="images/gallery-5.webp" alt="Diver swimming with sea turtle" class="dest-img" loading="lazy">
+          <div class="dest-overlay">
+            <span class="dest-tag">Tropical</span>
+            <h3 class="dest-title">Great Barrier Reef</h3>
+            <div class="dest-meta">
+              <span><i class="fa-solid fa-clock"></i> 7 Days</span>
+              <span><i class="fa-solid fa-water"></i> Moderate</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dest 6 -->
+        <div class="dest-card filterable-item zoom-in-element" data-category="mountain" onclick="location.href='contact.html?dest=Grand Canyon'">
+          <img src="images/gallery-3.webp" alt="Hikers scaling rocky ridge" class="dest-img" loading="lazy">
+          <div class="dest-overlay">
+            <span class="dest-tag">Mountain</span>
+            <h3 class="dest-title">Grand Canyon</h3>
+            <div class="dest-meta">
+              <span><i class="fa-solid fa-clock"></i> 6 Days</span>
+              <span><i class="fa-solid fa-hiking"></i> Moderate</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       Footer Section
+       ========================================================================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        
+        <!-- Brand -->
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <img src="images/logo.webp" alt="Logo" class="logo-img">
+            
+          </a>
+          <p>Premium, high-performance wilderness tours designed for responsible, adventurous spirits.</p>
+          <div class="social-links">
+            <a href="404.html" class="social-icon" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="404.html" class="social-icon" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+            <a href="404.html" class="social-icon" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="404.html" class="social-icon" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-links-col">
+          <h3>Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="destinations.html">Our Destinations</a></li>
+            <li><a href="packages.html">Adventure Deals</a></li>
+            <li><a href="about.html">Corporate Ethos</a></li>
+            <li><a href="about.html#guides">Expert Guides</a></li>
+          </ul>
+        </div>
+
+        <!-- Legal/Other Links -->
+        <div class="footer-links-col">
+          <h3>Support</h3>
+          <ul class="footer-links">
+            <li><a href="contact.html">Contact Coordinates</a></li>
+            <li><a href="#">Terms & Agreements</a></li>
+            <li><a href="#">Cancellation Policies</a></li>
+          </ul>
+        </div>
+
+        <!-- Newsletter Subscription -->
+        <div class="footer-newsletter">
+          <h3>Newsletter</h3>
+          <p>Get quarterly wilderness logs and exclusive early-bird package discounts.</p>
+          <form class="newsletter-form" id="newsletterForm" onsubmit="event.preventDefault(); alert('Subscribed successfully!'); this.reset();">
+            <input type="email" class="form-control" placeholder="Your Email" required aria-label="Newsletter email address">
+            <button type="submit" class="btn btn-green">Join</button>
+          </form>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Adventures Inc. All rights reserved. Designed for responsible exploration.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Core JavaScript -->
+  <script src="js/main.js"></script>
+</body>
+</html>

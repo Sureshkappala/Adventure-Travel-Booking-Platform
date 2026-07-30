@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Create an account with Adventures to join our high-octane expeditions, log training milestones, and track climber progress.">
+    <title>Create Account | Adventures Portal</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        .back-to-home-btn {
+            position: absolute;
+            top: 2rem;
+            left: 2rem;
+            z-index: 10;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.6rem 1.3rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border-radius: 8px;
+            background: #1e293b !important;
+            color: #ffffff !important;
+            border: 1px solid rgba(255, 255, 255, 0.15) !important;
+            transition: all var(--transition-fast);
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .back-to-home-btn:hover {
+            border-color: #8b5cf6 !important;
+            color: #8b5cf6 !important;
+            background: rgba(139, 92, 246, 0.1) !important;
+        }
+        @media (max-width: 768px) {
+            .back-to-home-btn {
+                position: relative !important;
+                top: 0 !important;
+                left: 0 !important;
+                margin: 0 auto 1.5rem auto !important;
+                display: inline-flex !important;
+                text-align: center;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body style="background-color: var(--color-primary); min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; padding: 2rem 1rem;">
+
+
+
+    <!-- BACK TO HOME BUTTON -->
+    <a href="index.html" class="back-to-home-btn"><i class="fa-solid fa-house"></i> Back to Home</a>
+
+    <!-- REGISTER CONTAINER -->
+    <div class="container" style="max-width: 520px; padding: 0; width: 100%;">
+        <div class="glass-card" style="padding: 2.75rem 2.25rem; text-align: center; border: 1px solid rgba(139, 92, 246, 0.25); box-shadow: 0 15px 35px rgba(0,0,0,0.4);">
+            
+            <!-- LOGO & HEADING -->
+            <div style="text-align: center; margin-bottom: 2rem;">
+                <img src="images/logo.webp" alt="Logo" class="logo-img" style="height: 38px; margin: 0 auto 1.25rem auto; display: block; filter: brightness(0) invert(1);">
+                <h2 style="font-size: 2rem; margin-bottom: 0.4rem; color: var(--color-text-white); font-family: var(--font-heading); font-weight: 700; text-align: center;">Create Account</h2>
+                <p style="font-size: 0.88rem; color: var(--color-text-muted); text-align: center; margin-bottom: 2rem;">Register your climber account or guide team profile.</p>
+            </div>
+
+            <!-- FORM -->
+            <form id="register-form" style="text-align: left;">
+                
+                <!-- FULL NAME -->
+                <div class="form-group">
+                    <label for="reg-name" style="display: block; margin-bottom: 0.5rem; font-size: 0.85rem; font-weight: 600; color: var(--color-text-white);">Full Name</label>
+                    <div style="position: relative;">
+                        <i class="fa-solid fa-user" style="position: absolute; left: 1rem; top: 50%; transform: translateY(-50%); color: var(--color-text-muted); font-size: 0.9rem;"></i>
+                        <input type="text" id="reg-name" placeholder="John Doe" class="form-control" style="padding-left: 2.75rem; background: #070d1e !important; border: 1px solid var(--color-border-glass); color: #fff;" required>
+                    </div>
+                </div>
+
+                <!-- EMAIL & PHONE (2-COL GRID) -->
+                <div class="form-grid-2col" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                    <div class="form-group">
+                        <label for="reg-email" style="display: block; margin-bottom: 0.5rem; font-size: 0.85rem; font-weight: 600; color: var(--color-text-white);">Email Address</label>
+                        <div style="position: relative;">
+                            <i class="fa-solid fa-envelope" style="position: absolute; left: 1rem; top: 50%; transform: translateY(-50%); color: var(--color-text-muted); font-size: 0.9rem;"></i>
+                            <input type="email" id="reg-email" placeholder="john@example.com" class="form-control" style="padding-left: 2.75rem; background: #070d1e !important; border: 1px solid var(--color-border-glass); color: #fff;" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="reg-phone" style="display: block; margin-bottom: 0.5rem; font-size: 0.85rem; font-weight: 600; color: var(--color-text-white);">Phone Number</label>
+                        <div style="position: relative;">
+                            <i class="fa-solid fa-phone" style="position: absolute; left: 1rem; top: 50%; transform: translateY(-50%); color: var(--color-text-muted); font-size: 0.9rem;"></i>
+                            <input type="tel" id="reg-phone" placeholder="1234567890" class="form-control" style="padding-left: 2.75rem; background: #070d1e !important; border: 1px solid var(--color-border-glass); color: #fff;" required>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PASSWORD & CONFIRM PASSWORD (2-COL GRID) -->
+                <div class="form-grid-2col" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                    <div class="form-group">
+                        <label for="reg-pwd" style="display: block; margin-bottom: 0.5rem; font-size: 0.85rem; font-weight: 600; color: var(--color-text-white);">Password</label>
+                        <div style="position: relative;">
+                            <i class="fa-solid fa-lock" style="position: absolute; left: 1rem; top: 50%; transform: translateY(-50%); color: var(--color-text-muted); font-size: 0.9rem;"></i>
+                            <input type="password" id="reg-pwd" placeholder="••••••••" class="form-control" style="padding-left: 2.75rem; padding-right: 2.5rem; background: #070d1e !important; border: 1px solid var(--color-border-glass); color: #fff;" required>
+                            <button type="button" style="position: absolute; right: 0.75rem; top: 50%; transform: translateY(-50%); background: none; border: none; color: var(--color-text-muted); cursor: pointer;" onclick="togglePwd('reg-pwd', 'eye-pwd1')">
+                                <i class="fa-solid fa-eye" id="eye-pwd1"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="reg-pwd-confirm" style="display: block; margin-bottom: 0.5rem; font-size: 0.85rem; font-weight: 600; color: var(--color-text-white);">Confirm Password</label>
+                        <div style="position: relative;">
+                            <i class="fa-solid fa-lock" style="position: absolute; left: 1rem; top: 50%; transform: translateY(-50%); color: var(--color-text-muted); font-size: 0.9rem;"></i>
+                            <input type="password" id="reg-pwd-confirm" placeholder="••••••••" class="form-control" style="padding-left: 2.75rem; padding-right: 2.5rem; background: #070d1e !important; border: 1px solid var(--color-border-glass); color: #fff;" required>
+                            <button type="button" style="position: absolute; right: 0.75rem; top: 50%; transform: translateY(-50%); background: none; border: none; color: var(--color-text-muted); cursor: pointer;" onclick="togglePwd('reg-pwd-confirm', 'eye-pwd2')">
+                                <i class="fa-solid fa-eye" id="eye-pwd2"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SELECT ROLE FIELD -->
+                <div class="form-group">
+                    <label for="reg-role" style="display: block; margin-bottom: 0.5rem; font-size: 0.85rem; font-weight: 600; color: var(--color-text-white);">Select Role</label>
+                    <div style="position: relative;">
+                        <i class="fa-solid fa-user-tag" style="position: absolute; left: 1rem; top: 50%; transform: translateY(-50%); color: var(--color-text-muted); font-size: 0.9rem;"></i>
+                        <select id="reg-role" class="form-control" style="padding-left: 2.75rem; background: #070d1e !important; border: 1px solid var(--color-border-glass); color: #fff;" required>
+                            <option value="" disabled selected>Select Role</option>
+                            <option value="client">Private Explorer / Climber</option>
+                            <option value="advisor">Expedition Guide / Admin</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- TERMS CHECKBOX -->
+                <div style="margin-bottom: 1.5rem; font-size: 0.85rem;">
+                    <label style="display: flex; align-items: center; gap: 0.5rem; color: var(--color-text-muted); cursor: pointer;">
+                        <input type="checkbox" style="width: auto;" required> I agree to the <a href="404.html" style="color: #b58a63; font-weight: 600; text-decoration: none;">Terms & Conditions</a>
+                    </label>
+                </div>
+
+                <!-- SUBMIT BUTTON -->
+                <button type="submit" class="btn btn-primary" style="width: 100%; padding: 0.9rem; font-size: 1.05rem; font-weight: 700; border-radius: var(--border-radius-sm); border: none; background: #b58a63 !important; color: #000000 !important; text-shadow: none;">Register Account</button>
+
+            </form>
+
+            <!-- BOTTOM LOGIN LINK -->
+            <div style="text-align: center; margin-top: 1.75rem; font-size: 0.85rem; color: var(--color-text-muted);">
+                Already have a climber account? <a href="login.html" style="color: #10b981; font-weight: 700; text-decoration: none;">Login Here</a>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Real-time input filtering to block digits in name and non-digits in phone
+        document.getElementById('reg-name').addEventListener('input', (e) => {
+            e.target.value = e.target.value.replace(/[^a-zA-Z\s]/g, '');
+        });
+
+        document.getElementById('reg-phone').addEventListener('input', (e) => {
+            e.target.value = e.target.value.replace(/\D/g, '');
+        });
+
+        function togglePwd(fieldId, eyeId) {
+            const field = document.getElementById(fieldId);
+            const icon = document.getElementById(eyeId);
+            if (field.type === 'password') {
+                field.type = 'text';
+                icon.classList.remove('fa-eye');
+                icon.classList.add('fa-eye-slash');
+            } else {
+                field.type = 'password';
+                icon.classList.remove('fa-eye-slash');
+                icon.classList.add('fa-eye');
+            }
+        }
+
+        document.getElementById('register-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const name = document.getElementById('reg-name').value;
+            const phone = document.getElementById('reg-phone').value;
+            const pwd = document.getElementById('reg-pwd').value;
+            const confirm = document.getElementById('reg-pwd-confirm').value;
+            const role = document.getElementById('reg-role').value || 'client';
+
+            // Name check (letters & spaces only)
+            const nameRegex = /^[a-zA-Z\s]+$/;
+            if (!nameRegex.test(name)) {
+                window.showCustomAlert('Full Name must contain only letters.', 'error');
+                return;
+            }
+
+            // Phone check (digits only)
+            const phoneRegex = /^[0-9]+$/;
+            if (!phoneRegex.test(phone)) {
+                window.showCustomAlert('Phone Number must contain only digits.', 'error');
+                return;
+            }
+
+            // Password complexity check
+            const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]).{8,}$/;
+            if (!passwordRegex.test(pwd)) {
+                window.showCustomAlert('Password must be at least 8 characters long and contain a combination of uppercase, lowercase, digits, and symbols.', 'error');
+                return;
+            }
+
+            if (pwd !== confirm) {
+                window.showCustomAlert('Passwords do not match. Please re-enter passwords.', 'error');
+                return;
+            }
+
+            localStorage.setItem('loggedInUserName', name.toUpperCase());
+            localStorage.setItem('loggedInUserRole', role);
+            window.showCustomAlert('Climber Account Registered! Redirecting to Expedition Control...', 'success');
+            setTimeout(() => {
+                window.location.href = 'studio-portal.html';
+            }, 1800);
+        });
+    </script>
+</body>
+</html>

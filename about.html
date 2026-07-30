@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adventures | Corporate Ethos & Guides</title>
+  <!-- FontAwesome for Premium Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Core stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ==========================================================================
+       Header / Navigation Bar
+       ========================================================================== -->
+  <header class="header scrolled"> <!-- default solid for subpages -->
+    <div class="container header-container">
+      <a href="index.html" class="logo" id="headerLogo">
+        <img src="images/logo.webp" alt="Logo" class="logo-img">
+      </a>
+      
+      <!-- Drawer Menu (acts as navbar on desktop and mobile drawer) -->
+      <nav class="navbar">
+        <div class="drawer-header">
+          <a href="index.html" class="logo">
+            <img src="images/logo.webp" alt="Logo" class="logo-img">
+            
+          </a>
+          <button class="drawer-close" aria-label="Close Menu"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        
+        <div class="drawer-search">
+          <div style="position: relative; width: 100%;">
+            <input type="text" placeholder="Search destinations..." onkeyup="if(event.key === 'Enter') { location.href='destinations.html?search=' + encodeURIComponent(this.value); }">
+            <i class="fa-solid fa-magnifying-glass" style="position: absolute; right: 1rem; top: 50%; transform: translateY(-50%); color: var(--color-text-muted); pointer-events: none;"></i>
+          </div>
+        </div>
+
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-home">Home</a></li>
+          <li><a href="destinations.html" class="nav-destinations">Destinations</a></li>
+          <li><a href="packages.html" class="nav-packages">Packages</a></li>
+          <li><a href="about.html" class="nav-about active">About Us</a></li>
+          <li><a href="contact.html" class="nav-contact">Contact</a></li>
+        </ul>
+        
+        <div class="nav-mobile-cta">
+          <a href="login.html" class="btn btn-secondary">Login</a>
+          <a href="contact.html" class="btn btn-primary">Book Now</a>
+        </div>
+        
+        <div class="drawer-contact-info">
+          <h5>Contact Info</h5>
+          <p><i class="fa-solid fa-phone"></i> +1 (800) 555-ADVENTURES</p>
+          <p><i class="fa-solid fa-envelope"></i> expeditions@adventures.com</p>
+          <p><i class="fa-solid fa-location-dot"></i> 800 Wilderness Ridge, Boulder, CO</p>
+        </div>
+      </nav>
+      
+      <div class="nav-controls">
+        <a href="login.html" class="btn btn-secondary btn-sm"><i class="fa-solid fa-right-to-bracket"></i> Login</a>
+        <a href="contact.html" class="btn btn-primary btn-sm">Book Now</a>
+        <button class="menu-toggle" aria-label="Toggle Menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       Subpage Hero
+       ========================================================================== -->
+  <section class="subpage-hero" style="background-image: url('images/hero-bg.webp');">
+    <div class="subpage-hero-content">
+      <span class="section-subtitle">Our Heritage</span>
+      <h1>About Adventures</h1>
+      <p>A collective of professional mountaineers, marine biologists, and wilderness photographers.</p>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       Narrative & Stats Section
+       ========================================================================== -->
+  <section class="section section-light" id="our-story">
+    <div class="container">
+      <div class="about-grid">
+        
+        <div class="about-content slide-left-element">
+          <h2>Pioneering Guided Expeditions Since 2012</h2>
+          <p class="about-desc">We began as a group of climbers and nature researchers who wanted to share the thrill of technical summits without compromising on safety or environmental preservation. Today, we map and lead low-impact, highly immersive journeys in the Swiss Alps, the Serengeti Savannah, and remote Indonesian reefs.</p>
+          <p class="about-desc" style="margin-top: -15px;">Every itinerary is developed in direct coordination with park managers and indigenous guides. We strongly believe that responsible tourism is the single most powerful tool for conservation funding.</p>
+          
+          <div class="about-stats" style="margin-top: 30px;">
+            <div class="stat-item">
+              <h3>150+</h3>
+              <p>Routes Mapped</p>
+            </div>
+            <div class="stat-item">
+              <h3>12k+</h3>
+              <p>Explorers Guided</p>
+            </div>
+            <div class="stat-item">
+              <h3>99.4%</h3>
+              <p>Satisfaction Rate</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-img-wrap slide-right-element">
+          <div class="about-img-frame">
+            <img src="images/about.webp" alt="Explorer looking out over valley" class="about-img" loading="lazy">
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       Core Guides Section
+       ========================================================================== -->
+  <section class="section" id="guides">
+    <div class="container">
+      <div class="section-title-wrap fade-in-element">
+        <span class="section-subtitle">Safety & Instruction Leaders</span>
+        <h2 class="section-title">Meet Our Trailblazers</h2>
+      </div>
+
+      <div class="team-grid">
+        
+        <!-- Guide 1 -->
+        <div class="team-card glass-panel fade-in-element">
+          <div class="team-img-wrap">
+            <img src="images/avatar-1.webp" alt="Sarah Miller profile" class="team-img" loading="lazy">
+          </div>
+          <div class="team-info">
+            <h3>Alexander Dubois</h3>
+            <p>Lead Alpine Guide (IFMGA)</p>
+          </div>
+        </div>
+
+        <!-- Guide 2 -->
+        <div class="team-card glass-panel fade-in-element" style="transition-delay: 0.1s;">
+          <div class="team-img-wrap">
+            <img src="images/avatar-2.webp" alt="Marcus Chen profile" class="team-img" loading="lazy">
+          </div>
+          <div class="team-info">
+            <h3>Sanjay Patel</h3>
+            <p>Wildlife Tracker & Eco-Guide</p>
+          </div>
+        </div>
+
+        <!-- Guide 3 -->
+        <div class="team-card glass-panel fade-in-element" style="transition-delay: 0.2s;">
+          <div class="team-img-wrap">
+            <img src="images/avatar-3.webp" alt="Emma Watson profile" class="team-img" loading="lazy">
+          </div>
+          <div class="team-info">
+            <h3>Elena Rostova</h3>
+            <p>Marine Survival Instructor</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       Footer Section
+       ========================================================================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        
+        <!-- Brand -->
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <img src="images/logo.webp" alt="Logo" class="logo-img">
+            
+          </a>
+          <p>Premium, high-performance wilderness tours designed for responsible, adventurous spirits.</p>
+          <div class="social-links">
+            <a href="404.html" class="social-icon" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="404.html" class="social-icon" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+            <a href="404.html" class="social-icon" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="404.html" class="social-icon" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-links-col">
+          <h3>Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="destinations.html">Our Destinations</a></li>
+            <li><a href="packages.html">Adventure Deals</a></li>
+            <li><a href="about.html">Corporate Ethos</a></li>
+            <li><a href="about.html#guides">Expert Guides</a></li>
+          </ul>
+        </div>
+
+        <!-- Legal/Other Links -->
+        <div class="footer-links-col">
+          <h3>Support</h3>
+          <ul class="footer-links">
+            <li><a href="contact.html">Contact Coordinates</a></li>
+            <li><a href="#">Terms & Agreements</a></li>
+            <li><a href="#">Cancellation Policies</a></li>
+          </ul>
+        </div>
+
+        <!-- Newsletter Subscription -->
+        <div class="footer-newsletter">
+          <h3>Newsletter</h3>
+          <p>Get quarterly wilderness logs and exclusive early-bird package discounts.</p>
+          <form class="newsletter-form" id="newsletterForm" onsubmit="event.preventDefault(); alert('Subscribed successfully!'); this.reset();">
+            <input type="email" class="form-control" placeholder="Your Email" required aria-label="Newsletter email address">
+            <button type="submit" class="btn btn-green">Join</button>
+          </form>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Adventures Inc. All rights reserved. Designed for responsible exploration.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Core JavaScript -->
+  <script src="js/main.js"></script>
+</body>
+</html>

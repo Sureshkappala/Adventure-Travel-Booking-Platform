@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adventures | Premium Multi-Page Travel Booking Platform</title>
+  <!-- FontAwesome for Premium Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Core stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ==========================================================================
+       Header / Navigation Bar
+       ========================================================================== -->
+  <header class="header">
+    <div class="container header-container">
+      <a href="index.html" class="logo" id="headerLogo">
+        <img src="images/logo.webp" alt="Logo" class="logo-img">
+      </a>
+      
+      <!-- Drawer Menu (acts as navbar on desktop and mobile drawer) -->
+      <nav class="navbar">
+        <div class="drawer-header">
+          <a href="index.html" class="logo">
+            <img src="images/logo.webp" alt="Logo" class="logo-img">
+            
+          </a>
+          <button class="drawer-close" aria-label="Close Menu"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        
+        <div class="drawer-search">
+          <div style="position: relative; width: 100%;">
+            <input type="text" placeholder="Search destinations..." onkeyup="if(event.key === 'Enter') { location.href='destinations.html?search=' + encodeURIComponent(this.value); }">
+            <i class="fa-solid fa-magnifying-glass" style="position: absolute; right: 1rem; top: 50%; transform: translateY(-50%); color: var(--color-text-muted); pointer-events: none;"></i>
+          </div>
+        </div>
+
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-home active">Home</a></li>
+          <li><a href="destinations.html" class="nav-destinations">Destinations</a></li>
+          <li><a href="packages.html" class="nav-packages">Packages</a></li>
+          <li><a href="about.html" class="nav-about">About Us</a></li>
+          <li><a href="contact.html" class="nav-contact">Contact</a></li>
+        </ul>
+        
+        <div class="nav-mobile-cta">
+          <a href="login.html" class="btn btn-secondary">Login</a>
+          <a href="contact.html" class="btn btn-primary">Book Now</a>
+        </div>
+        
+        <div class="drawer-contact-info">
+          <h5>Contact Info</h5>
+          <p><i class="fa-solid fa-phone"></i> +1 (800) 555-ADVENTURES</p>
+          <p><i class="fa-solid fa-envelope"></i> expeditions@adventures.com</p>
+          <p><i class="fa-solid fa-location-dot"></i> 800 Wilderness Ridge, Boulder, CO</p>
+        </div>
+      </nav>
+      
+      <div class="nav-controls">
+        <a href="login.html" class="btn btn-secondary btn-sm"><i class="fa-solid fa-right-to-bracket"></i> Login</a>
+        <a href="contact.html" class="btn btn-primary btn-sm">Book Now</a>
+        <button class="menu-toggle" aria-label="Toggle Menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       Hero Section & Floating Booking Search Form
+       ========================================================================== -->
+  <section class="hero" id="home" style="background-image: url('images/hero-bg.webp');">
+    <div class="container">
+      <div class="hero-content">
+        <p class="hero-tagline">Unleash Your Inner Explorer</p>
+        <h1 class="hero-title">Adventure Awaits <br><span class="text-gradient-orange">Beyond The Horizon</span></h1>
+        <p class="hero-desc">Discover hand-crafted, high-octane expeditions to the world's most remote corners. Expert guides, zero-compromise safety, and memories that last a lifetime.</p>
+      </div>
+
+      <!-- Floating booking search form container -->
+      <div class="booking-search-container">
+        <form class="booking-form glass-panel" id="bookingSearchForm" novalidate action="contact.html" method="GET">
+          
+          <!-- Destination Field -->
+          <div class="form-group">
+            <label for="bookingDest">Destination</label>
+            <div class="form-input-wrap">
+              <i class="fa-solid fa-location-dot"></i>
+              <input type="text" name="dest" id="bookingDest" class="form-control" placeholder="Where to go?" required>
+            </div>
+            <span class="error-msg">Destination is mandatory.</span>
+          </div>
+
+          <!-- Date Field -->
+          <div class="form-group">
+            <label for="bookingDate">Travel Date</label>
+            <div class="form-input-wrap">
+              <i class="fa-solid fa-calendar-days"></i>
+              <input type="date" name="date" id="bookingDate" class="form-control" required>
+            </div>
+            <span class="error-msg">Travel date is required.</span>
+          </div>
+
+          <!-- Number of Travelers -->
+          <div class="form-group">
+            <label for="bookingTravelers">Travelers</label>
+            <div class="form-input-wrap">
+              <i class="fa-solid fa-user-group"></i>
+              <input type="number" name="travelers" id="bookingTravelers" class="form-control" min="1" placeholder="Quantity" required>
+            </div>
+            <span class="error-msg">Must be a positive number.</span>
+          </div>
+
+          <!-- Budget Field -->
+          <div class="form-group">
+            <label for="bookingBudget">Budget ($)</label>
+            <div class="form-input-wrap">
+              <i class="fa-solid fa-dollar-sign"></i>
+              <input type="number" name="budget" id="bookingBudget" class="form-control" min="1" placeholder="Max budget" required>
+            </div>
+            <span class="error-msg">Budget must be positive.</span>
+          </div>
+
+          <!-- Submit Button -->
+          <button type="submit" class="btn btn-primary" id="btnSearchSubmit">
+            <i class="fa-solid fa-magnifying-glass"></i> Explore
+          </button>
+
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       Destination Showcase Teaser
+       ========================================================================== -->
+  <section class="section" id="destinations">
+    <div class="container">
+      <div class="section-title-wrap fade-in-element">
+        <span class="section-subtitle">Stunning Landscapes</span>
+        <h2 class="section-title">Expedition Hotspots</h2>
+      </div>
+
+      <div class="destinations-grid">
+        
+        <!-- Destination Card 1 -->
+        <div class="dest-card zoom-in-element" onclick="location.href='contact.html?dest=Swiss Alps'">
+          <img src="images/dest-1.webp" alt="Swiss Alps peak hiking" class="dest-img" loading="lazy">
+          <div class="dest-overlay">
+            <span class="dest-tag">Mountain</span>
+            <h3 class="dest-title">Swiss Alps</h3>
+            <div class="dest-meta">
+              <span><i class="fa-solid fa-clock"></i> 8 Days</span>
+              <span><i class="fa-solid fa-hiking"></i> Demanding</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Destination Card 2 -->
+        <div class="dest-card zoom-in-element" style="transition-delay: 0.1s;" onclick="location.href='contact.html?dest=Serengeti Safari'">
+          <img src="images/dest-2.webp" alt="Serengeti Savannah cheetah" class="dest-img" loading="lazy">
+          <div class="dest-overlay">
+            <span class="dest-tag">Safari</span>
+            <h3 class="dest-title">Serengeti Safari</h3>
+            <div class="dest-meta">
+              <span><i class="fa-solid fa-clock"></i> 6 Days</span>
+              <span><i class="fa-solid fa-camera"></i> Moderate</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Destination Card 3 -->
+        <div class="dest-card zoom-in-element" style="transition-delay: 0.2s;" onclick="location.href='contact.html?dest=Bali Explorer'">
+          <img src="images/dest-3.webp" alt="Bali ancient water temple temple" class="dest-img" loading="lazy">
+          <div class="dest-overlay">
+            <span class="dest-tag">Tropical</span>
+            <h3 class="dest-title">Bali Explorer</h3>
+            <div class="dest-meta">
+              <span><i class="fa-solid fa-clock"></i> 10 Days</span>
+              <span><i class="fa-solid fa-water"></i> Easy</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div style="text-align: center; margin-top: 50px;" class="fade-in-element">
+        <a href="destinations.html" class="btn btn-primary">
+          View All Destinations <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       Adventure Package Cards Teaser
+       ========================================================================== -->
+  <section class="section" id="packages" style="background-color: #070d1e;">
+    <div class="container">
+      <div class="section-title-wrap fade-in-element">
+        <span class="section-subtitle">Curated Trips</span>
+        <h2 class="section-title">Popular Package Deals</h2>
+      </div>
+
+      <div class="packages-grid">
+        
+        <!-- Package 1 -->
+        <div class="pkg-card glass-panel fade-in-element">
+          <div class="pkg-img-wrap">
+            <img src="images/pkg-1.webp" alt="Climbers climbing snowy slopes" class="pkg-img" loading="lazy">
+            <span class="pkg-badge">Advanced</span>
+          </div>
+          <div class="pkg-content">
+            <div class="pkg-meta">
+              <span><i class="fa-solid fa-location-dot"></i> Switzerland</span>
+              <span><i class="fa-solid fa-calendar"></i> 7 Days</span>
+            </div>
+            <h3 class="pkg-title">Alpine Summit Ascent</h3>
+            <div class="pkg-rating">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <span>(48 Reviews)</span>
+            </div>
+            <div class="pkg-footer">
+              <div class="pkg-price">$1,899 <span>/ person</span></div>
+              <a href="contact.html?dest=Alpine Summit Ascent" class="btn btn-green">Explore</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Package 2 -->
+        <div class="pkg-card glass-panel fade-in-element" style="transition-delay: 0.1s;">
+          <div class="pkg-img-wrap">
+            <img src="images/pkg-2.webp" alt="Wildlife viewing jeep in savannah" class="pkg-img" loading="lazy">
+            <span class="pkg-badge">Medium</span>
+          </div>
+          <div class="pkg-content">
+            <div class="pkg-meta">
+              <span><i class="fa-solid fa-location-dot"></i> Tanzania</span>
+              <span><i class="fa-solid fa-calendar"></i> 5 Days</span>
+            </div>
+            <h3 class="pkg-title">Wild Serengeti Safari</h3>
+            <div class="pkg-rating">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star-half-stroke"></i>
+              <span>(64 Reviews)</span>
+            </div>
+            <div class="pkg-footer">
+              <div class="pkg-price">$2,450 <span>/ person</span></div>
+              <a href="contact.html?dest=Wild Serengeti Safari" class="btn btn-green">Explore</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Package 3 -->
+        <div class="pkg-card glass-panel fade-in-element" style="transition-delay: 0.2s;">
+          <div class="pkg-img-wrap">
+            <img src="images/pkg-3.webp" alt="Dense green rainforest river" class="pkg-img" loading="lazy">
+            <span class="pkg-badge">Easy</span>
+          </div>
+          <div class="pkg-content">
+            <div class="pkg-meta">
+              <span><i class="fa-solid fa-location-dot"></i> Indonesia</span>
+              <span><i class="fa-solid fa-calendar"></i> 9 Days</span>
+            </div>
+            <h3 class="pkg-title">Bali Heritage Trek</h3>
+            <div class="pkg-rating">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <span>(52 Reviews)</span>
+            </div>
+            <div class="pkg-footer">
+              <div class="pkg-price">$1,299 <span>/ person</span></div>
+              <a href="contact.html?dest=Bali Heritage Trek" class="btn btn-green">Explore</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div style="text-align: center; margin-top: 50px;" class="fade-in-element">
+        <a href="packages.html" class="btn btn-primary">
+          View All Packages <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       About Us Section Teaser
+       ========================================================================== -->
+  <section class="section section-light" id="about">
+    <div class="container">
+      <div class="about-grid">
+        
+        <div class="about-content slide-left-element">
+          <span class="section-subtitle">Our Heritage</span>
+          <h2 class="section-title">Pioneering Guided Expeditions Since 2012</h2>
+          <p class="about-desc">We began as a group of mountaineers and wilderness photographers seeking to bridge the gap between technical expeditions and travel enthusiasts. Over the past decade, we have designed thousands of custom paths, prioritizing environment protection and genuine culture exchange.</p>
+          
+          <ul class="about-features">
+            <li><i class="fa-solid fa-circle-check"></i> certified wilderness responders</li>
+            <li><i class="fa-solid fa-circle-check"></i> fully carbon-offset trips</li>
+            <li><i class="fa-solid fa-circle-check"></i> bespoke customized itineraries</li>
+          </ul>
+
+          <div style="margin-top: 30px;">
+            <a href="about.html" class="btn btn-primary">
+              Read Our Full Story <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="about-img-wrap slide-right-element">
+          <div class="about-img-frame">
+            <img src="images/about.webp" alt="Explorer looking out over valley" class="about-img" loading="lazy">
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       Why Choose Us Section
+       ========================================================================== -->
+  <section class="section" id="why">
+    <div class="container">
+      <div class="section-title-wrap fade-in-element">
+        <span class="section-subtitle">What Sets Us Apart</span>
+        <h2 class="section-title">The Adventures Guarantee</h2>
+      </div>
+
+      <div class="why-grid">
+        
+        <!-- Card 1 -->
+        <div class="why-card glass-panel fade-in-element">
+          <div class="why-icon-wrap">
+            <i class="fa-solid fa-user-shield"></i>
+          </div>
+          <h3>Expert Safeguards</h3>
+          <p>Satellite communication trackers, real-time weather monitoring, and elite wilderness survival guides on every route.</p>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="why-card glass-panel fade-in-element" style="transition-delay: 0.1s;">
+          <div class="why-icon-wrap">
+            <i class="fa-solid fa-map-location-dot"></i>
+          </div>
+          <h3>Curated Outlets</h3>
+          <p>Avoid massive tourist traps. We guide you through custom, privately mapped paths that deliver true solitude.</p>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="why-card glass-panel fade-in-element" style="transition-delay: 0.2s;">
+          <div class="why-icon-wrap">
+            <i class="fa-solid fa-leaf"></i>
+          </div>
+          <h3>Eco Conservation</h3>
+          <p>Leave No Trace protocols. We contribute 5% of all package margins directly to local flora restoration programs.</p>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="why-card glass-panel fade-in-element" style="transition-delay: 0.3s;">
+          <div class="why-icon-wrap">
+            <i class="fa-solid fa-credit-card"></i>
+          </div>
+          <h3>Fair Valuation</h3>
+          <p>No hidden booking surcharges. Premium equipment rental, meals, and accommodations are bundled in the upfront cost.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       Gallery Section
+       ========================================================================== -->
+  <section class="section section-light" id="gallery">
+    <div class="container">
+      <div class="section-title-wrap fade-in-element">
+        <span class="section-subtitle">Visual Logs</span>
+        <h2 class="section-title">Snapshots from the Wild</h2>
+      </div>
+
+      <div class="gallery-grid">
+        
+        <!-- Gallery 1 -->
+        <div class="gallery-item zoom-in-element" onclick="location.href='destinations.html'">
+          <img src="images/gallery-1.webp" alt="Kayaking in turquoise water" class="gallery-img" loading="lazy">
+          <div class="gallery-hover">
+            <img src="images/logo.webp" alt="Logo" class="logo-img">
+            <h4>Alpine Kayaking</h4>
+          </div>
+        </div>
+
+        <!-- Gallery 2 -->
+        <div class="gallery-item zoom-in-element" style="transition-delay: 0.05s;" onclick="location.href='packages.html'">
+          <img src="images/gallery-2.webp" alt="Green Aurora above orange tent" class="gallery-img" loading="lazy">
+          <div class="gallery-hover">
+            <img src="images/logo.webp" alt="Logo" class="logo-img">
+            <h4>Northern Lights Camp</h4>
+          </div>
+        </div>
+
+        <!-- Gallery 3 -->
+        <div class="gallery-item zoom-in-element" style="transition-delay: 0.1s;" onclick="location.href='destinations.html'">
+          <img src="images/gallery-3.webp" alt="Hikers scaling rocky ridge" class="gallery-img" loading="lazy">
+          <div class="gallery-hover">
+            <img src="images/logo.webp" alt="Logo" class="logo-img">
+            <h4>Canyon Ridge Hike</h4>
+          </div>
+        </div>
+
+        <!-- Gallery 4 -->
+        <div class="gallery-item zoom-in-element" style="transition-delay: 0.15s;" onclick="location.href='destinations.html'">
+          <img src="images/gallery-4.webp" alt="Balloons hovering over red dunes" class="gallery-img" loading="lazy">
+          <div class="gallery-hover">
+            <img src="images/logo.webp" alt="Logo" class="logo-img">
+            <h4>Sahara Ballooning</h4>
+          </div>
+        </div>
+
+        <!-- Gallery 5 -->
+        <div class="gallery-item zoom-in-element" style="transition-delay: 0.2s;" onclick="location.href='destinations.html'">
+          <img src="images/gallery-5.webp" alt="Diver swimming with sea turtle" class="gallery-img" loading="lazy">
+          <div class="gallery-hover">
+            <img src="images/logo.webp" alt="Logo" class="logo-img">
+            <h4>Reef Diving</h4>
+          </div>
+        </div>
+
+        <!-- Gallery 6 -->
+        <div class="gallery-item zoom-in-element" style="transition-delay: 0.25s;" onclick="location.href='packages.html'">
+          <img src="images/gallery-6.webp" alt="Climber scaling vertical rock cliff" class="gallery-img" loading="lazy">
+          <div class="gallery-hover">
+            <img src="images/logo.webp" alt="Logo" class="logo-img">
+            <h4>Rock Climbing</h4>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       Testimonials Section
+       ========================================================================== */ -->
+  <section class="section" id="testimonials" style="background-color: #070d1e;">
+    <div class="container">
+      <div class="section-title-wrap fade-in-element">
+        <span class="section-subtitle">Testimonials</span>
+        <h2 class="section-title">Words from Our Explorers</h2>
+      </div>
+
+      <div class="testimonials-slider-container zoom-in-element">
+        <div class="testimonials-wrapper">
+          
+          <!-- Slide 1 -->
+          <div class="testimonial-slide">
+            <div class="testimonial-card glass-panel">
+              <i class="fa-solid fa-quote-left quote-icon"></i>
+              <div class="t-rating">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+              <p class="t-comment">"Trekking the Swiss Alps with Adventures was a revelation. Our guide didn't just lead the way; he explained the geology and local folklore. The booking process was super smooth, and the gear provided was top-notch. Highly recommend!"</p>
+              <div class="t-user">
+                <img src="images/avatar-1.webp" alt="Sarah Miller profile" class="t-avatar" loading="lazy">
+                <div class="t-info">
+                  <h4>Sarah Miller</h4>
+                  <p>California, USA</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="testimonial-slide">
+            <div class="testimonial-card glass-panel">
+              <i class="fa-solid fa-quote-left quote-icon"></i>
+              <div class="t-rating">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+              <p class="t-comment">"I was skeptical about booking a safari online, but their validations and responsive helpdesk put me at ease. Standing five yards from a pride of lions under the Serengeti sky is something I'll tell my grandkids about."</p>
+              <div class="t-user">
+                <img src="images/avatar-2.webp" alt="Marcus Chen profile" class="t-avatar" loading="lazy">
+                <div class="t-info">
+                  <h4>Marcus Chen</h4>
+                  <p>Vancouver, Canada</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 3 -->
+          <div class="testimonial-slide">
+            <div class="testimonial-card glass-panel">
+              <i class="fa-solid fa-quote-left quote-icon"></i>
+              <div class="t-rating">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+              <p class="t-comment">"Bali had so many hidden wonders. The heritage trek led us through secret temples and ravines that standard tour buses couldn't dream of accessing. Responsible, safe, and truly unforgettable."</p>
+              <div class="t-user">
+                <img src="images/avatar-3.webp" alt="Emma Watson profile" class="t-avatar" loading="lazy">
+                <div class="t-info">
+                  <h4>Emma Watson</h4>
+                  <p>London, UK</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Dot Indicators -->
+        <div class="slider-dots"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       Footer Section
+       ========================================================================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        
+        <!-- Brand -->
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <img src="images/logo.webp" alt="Logo" class="logo-img">
+            
+          </a>
+          <p>Premium, high-performance wilderness tours designed for responsible, adventurous spirits.</p>
+          <div class="social-links">
+            <a href="404.html" class="social-icon" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="404.html" class="social-icon" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+            <a href="404.html" class="social-icon" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="404.html" class="social-icon" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-links-col">
+          <h3>Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="destinations.html">Our Destinations</a></li>
+            <li><a href="packages.html">Adventure Deals</a></li>
+            <li><a href="about.html">Corporate Ethos</a></li>
+            <li><a href="about.html#guides">Expert Guides</a></li>
+          </ul>
+        </div>
+
+        <!-- Legal/Other Links -->
+        <div class="footer-links-col">
+          <h3>Support</h3>
+          <ul class="footer-links">
+            <li><a href="contact.html">Contact Coordinates</a></li>
+            <li><a href="#">Terms & Agreements</a></li>
+            <li><a href="#">Cancellation Policies</a></li>
+          </ul>
+        </div>
+
+        <!-- Newsletter Subscription -->
+        <div class="footer-newsletter">
+          <h3>Newsletter</h3>
+          <p>Get quarterly wilderness logs and exclusive early-bird package discounts.</p>
+          <form class="newsletter-form" id="newsletterForm" onsubmit="event.preventDefault(); alert('Subscribed successfully!'); this.reset();">
+            <input type="email" class="form-control" placeholder="Your Email" required aria-label="Newsletter email address">
+            <button type="submit" class="btn btn-green">Join</button>
+          </form>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Adventures Inc. All rights reserved. Designed for responsible exploration.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Core JavaScript -->
+  <script src="js/main.js"></script>
+</body>
+</html>

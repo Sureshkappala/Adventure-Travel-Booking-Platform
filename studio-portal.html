@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Adventures - Expedition Operations Control Board. Monitor bookings, training stats, and equipment readiness.">
+    <title>Expedition Dashboard | Adventures</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body style="overflow-y: auto; background-color: var(--color-primary);">
+
+    <!-- PRELOADER -->
+    <div class="preloader">
+        <div class="preloader-circle-wrap">
+            <div class="preloader-circle"></div>
+            <i class="fa-solid fa-compass preloader-icon"></i>
+        </div>
+        <div class="preloader-percentage">0%</div>
+    </div>
+
+    <!-- MOBILE TOGGLE HEADER -->
+    <div class="db-mobile-header" style="display: none;">
+        <button class="db-hamburger" aria-label="Toggle Menu"><i class="fa-solid fa-bars"></i></button>
+        <a href="studio-portal.html" class="db-mobile-logo">
+            <div class="logo" style="pointer-events: none;"><img src="images/logo.webp" alt="Logo" class="logo-img"></div>
+        </a>
+        <div class="db-mobile-avatar user-avatar" style="width: 32px; height: 32px; border-radius: 50%; background: var(--color-accent-green); color: var(--color-primary); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.85rem;">EX</div>
+    </div>
+    
+    <!-- Sidebar Overlay -->
+    <div class="db-sidebar-overlay"></div>
+
+    <div class="db-container" style="display: flex; min-height: 100vh;">
+        <!-- COLLAPSIBLE SIDEBAR -->
+        <aside class="db-sidebar">
+            <button class="db-sidebar-close" aria-label="Close Menu" style="display: none;"><i class="fa-solid fa-xmark"></i></button>
+            <div style="overflow-y: auto; height: calc(100% - 60px); padding-right: 5px;">
+                <a href="studio-portal.html" class="sidebar-logo" style="text-decoration: none;">
+                    <div class="logo" style="margin: 0 auto 1.5rem auto; justify-content: center;"><img src="images/logo.webp" alt="Logo" class="logo-img"></div>
+                </a>
+                
+                <!-- Group 1: Main -->
+                <div class="sidebar-section-title" style="margin-top: 1rem;">Main</div>
+                <nav class="sidebar-menu">
+                    <a href="studio-portal.html" class="sidebar-link active"><i class="fa-solid fa-chart-pie"></i> Control Board</a>
+                    <a href="destinations.html" class="sidebar-link"><i class="fa-solid fa-map-location-dot"></i> Browse Destinations</a>
+                    <a href="packages.html" class="sidebar-link"><i class="fa-solid fa-suitcase"></i> Expedition Packages</a>
+                </nav>
+
+                <!-- Group 2: Climbing Milestones -->
+                <div class="sidebar-section-title" style="margin-top: 1rem;">Wilderness Logs</div>
+                <nav class="sidebar-menu">
+                    <a href="#" class="sidebar-link" onclick="window.showCustomAlert('Redirecting to Wilderness Permits drawer...', 'success')"><i class="fa-solid fa-id-card"></i> Permits & Visas</a>
+                    <a href="#" class="sidebar-link" onclick="window.showCustomAlert('Opening Gear checklist sheet...', 'success')"><i class="fa-solid fa-list-check"></i> Gear Checklists</a>
+                </nav>
+
+                <!-- Group 3: Training Analytics -->
+                <div class="sidebar-section-title" style="margin-top: 1rem;">Health & Prep</div>
+                <nav class="sidebar-menu">
+                    <a href="#" class="sidebar-link" onclick="window.showCustomAlert('Opening cardio tracker logs...', 'success')"><i class="fa-solid fa-heart-pulse"></i> Cardio Tracker</a>
+                    <a href="#" class="sidebar-link" onclick="window.showCustomAlert('Redirecting to emergency satellite beacon configuration...', 'success')"><i class="fa-solid fa-satellite-dish"></i> SAT Communication</a>
+                </nav>
+            </div>
+            
+            <a href="login.html" class="signout-btn" id="dashboard-logout-btn" onclick="localStorage.clear();"><i class="fa-solid fa-right-from-bracket"></i> Sign Out</a>
+        </aside>
+
+        <!-- MAIN PANEL -->
+        <main class="db-main">
+            <!-- Welcome Hero -->
+            <div class="db-welcome-hero" style="border-radius: var(--border-radius-md); padding: 2rem 2.5rem; margin-bottom: 2rem;">
+                <h1>Hello, <span class="user-name" style="font-size: inherit; font-weight: inherit; color: inherit;">Private Explorer</span></h1>
+                <p>Welcome to your wilderness control dashboard. Track active climbing permits, training progression milestones, and gear checklist completion logs.</p>
+            </div>
+
+            <!-- Stats Row -->
+            <div class="db-stats-row">
+                <div class="stat-card">
+                    <div>
+                        <div class="stat-label">Total Booking Investments</div>
+                        <h3 class="stat-value">$12,450</h3>
+                    </div>
+                    <div class="stat-icon-wrapper" style="background: rgba(16, 185, 129, 0.1); color: var(--color-accent-green);"><i class="fa-solid fa-wallet"></i></div>
+                </div>
+                <div class="stat-card">
+                    <div>
+                        <div class="stat-label">Adventure Loyalty Points</div>
+                        <h3 class="stat-value">3,420 PTS</h3>
+                    </div>
+                    <div class="stat-icon-wrapper" style="background: rgba(255, 122, 0, 0.1); color: var(--color-accent-orange);"><i class="fa-solid fa-star"></i></div>
+                </div>
+                <div class="stat-card">
+                    <div>
+                        <div class="stat-label">Active Expeditions</div>
+                        <h3 class="stat-value">2 Tours</h3>
+                    </div>
+                    <div class="stat-icon-wrapper" style="background: rgba(59, 130, 246, 0.1); color: #3b82f6;"><i class="fa-solid fa-person-hiking"></i></div>
+                </div>
+                <div class="stat-card">
+                    <div>
+                        <div class="stat-label">Readiness Index Rating</div>
+                        <h3 class="stat-value">100% Prepared</h3>
+                    </div>
+                    <div class="stat-icon-wrapper" style="background: rgba(168, 85, 247, 0.1); color: #a855f7;"><i class="fa-solid fa-gauge-high"></i></div>
+                </div>
+            </div>
+
+            <!-- Main Layout Grid -->
+            <div class="db-grid">
+                <!-- Left Column Boxes -->
+                <div class="grid-left">
+                    <!-- Box 1: Active Expeditions Table -->
+                    <div class="panel-box">
+                        <div class="panel-box-header" style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--color-border-glass); padding-bottom: 1rem; margin-bottom: 1.5rem;">
+                            <h3 class="panel-box-title" style="font-size: 1.15rem; font-weight: 700; color: var(--color-text-white);">Active Strategy Expeditions</h3>
+                            <a href="packages.html" style="color: var(--color-accent-green); font-size: 0.9rem; text-decoration: none; font-weight: 600;">View Catalogs</a>
+                        </div>
+                        <table class="db-table" style="width: 100%; border-collapse: collapse; text-align: left;">
+                            <thead>
+                                <tr>
+                                    <th>Expedition Name</th>
+                                    <th>Assigned Lead Guide</th>
+                                    <th>Climbing Difficulty</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="text-light-value" data-label="Expedition" style="color: var(--color-text-white); font-weight: 600;">Glacier Kayaking Patagonia</td>
+                                    <td data-label="Guide">Elena Rostova (Marine Leader)</td>
+                                    <td data-label="Difficulty">Extreme (Level 5)</td>
+                                    <td data-label="Status"><span class="badge-status" style="background-color: rgba(34, 197, 94, 0.15); color: var(--color-accent-green); border: 1px solid rgba(34, 197, 94, 0.2); padding: 0.25rem 0.75rem; border-radius: var(--border-radius-sm); font-size: 0.75rem; font-weight: 700; text-transform: uppercase;">Active</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-light-value" data-label="Expedition" style="color: var(--color-text-white); font-weight: 600;">Alps High Peak Ascent</td>
+                                    <td data-label="Guide">Jean-Pierre Dubois (Alpine CIO)</td>
+                                    <td data-label="Difficulty">Advanced (Level 4)</td>
+                                    <td data-label="Status"><span class="badge-status" style="background-color: rgba(34, 197, 94, 0.15); color: var(--color-accent-green); border: 1px solid rgba(34, 197, 94, 0.2); padding: 0.25rem 0.75rem; border-radius: var(--border-radius-sm); font-size: 0.75rem; font-weight: 700; text-transform: uppercase;">Active</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Box 2: Preparation Milestones Table -->
+                    <div class="panel-box" style="margin-top: 1.8rem;">
+                        <div class="panel-box-header" style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--color-border-glass); padding-bottom: 1rem; margin-bottom: 1.5rem;">
+                            <h3 class="panel-box-title" style="font-size: 1.15rem; font-weight: 700; color: var(--color-text-white);">Preparation Milestones</h3>
+                        </div>
+                        <table class="db-table" style="width: 100%; border-collapse: collapse; text-align: left;">
+                            <thead>
+                                <tr>
+                                    <th>Milestone Action</th>
+                                    <th>Target Destination</th>
+                                    <th>Permit Approval Date</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="text-light-value" data-label="Milestone" style="color: var(--color-text-white); font-weight: 600;">Cardio Endurance Clearance</td>
+                                    <td data-label="Destination">Patagonia Base Camp</td>
+                                    <td data-label="Date">14 Sep 2026</td>
+                                    <td data-label="Status"><span class="badge-status" style="background-color: rgba(59, 130, 246, 0.15); color: #3b82f6; border: 1px solid rgba(59, 130, 246, 0.2); padding: 0.25rem 0.75rem; border-radius: var(--border-radius-sm); font-size: 0.75rem; font-weight: 700; text-transform: uppercase;">Completed</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-light-value" data-label="Milestone" style="color: var(--color-text-white); font-weight: 600;">Wilderness Altitude Visa</td>
+                                    <td data-label="Destination">Alps Base Station</td>
+                                    <td data-label="Date">08 Jul 2026</td>
+                                    <td data-label="Status"><span class="badge-status" style="background-color: rgba(59, 130, 246, 0.15); color: #3b82f6; border: 1px solid rgba(59, 130, 246, 0.2); padding: 0.25rem 0.75rem; border-radius: var(--border-radius-sm); font-size: 0.75rem; font-weight: 700; text-transform: uppercase;">Completed</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Right Column Widgets -->
+                <div class="right-widget">
+                    <!-- Box 3: Preparation metrics -->
+                    <div class="panel-box">
+                        <h3 class="panel-box-title" style="font-size: 1.15rem; font-weight: 700; color: var(--color-text-white); margin-bottom: 1.5rem;">Preparation Ratings</h3>
+                        
+                        <div class="widget-metric-row" style="margin-bottom: 1.25rem;">
+                            <div class="widget-metric-header" style="display: flex; justify-content: space-between; font-size: 0.85rem; color: var(--color-text-muted); margin-bottom: 0.5rem;">
+                                <span>Physical Endurance Rating</span>
+                                <span class="text-light-value" style="color: var(--color-text-white); font-weight: 600;">94 / 100</span>
+                            </div>
+                            <div class="widget-progress-bar" style="background: rgba(255,255,255,0.05); height: 6px; border-radius: 999px; overflow: hidden;">
+                                <div class="widget-progress-fill" style="width: 94%; background-color: var(--color-accent-green); height: 100%;"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="widget-metric-row">
+                            <div class="widget-metric-header" style="display: flex; justify-content: space-between; font-size: 0.85rem; color: var(--color-text-muted); margin-bottom: 0.5rem;">
+                                <span>High-Altitude Acclimatization</span>
+                                <span class="text-light-value" style="color: var(--color-text-white); font-weight: 600;">82 / 100</span>
+                            </div>
+                            <div class="widget-progress-bar" style="background: rgba(255,255,255,0.05); height: 6px; border-radius: 999px; overflow: hidden;">
+                                <div class="widget-progress-fill" style="width: 82%; background-color: #3b82f6; height: 100%;"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Box 4: Top Visited Regions -->
+                    <div class="panel-box" style="margin-top: 1.8rem;">
+                        <h3 class="panel-box-title" style="font-size: 1.15rem; font-weight: 700; color: var(--color-text-white); margin-bottom: 1.5rem;">Top Visited Regions</h3>
+                        <div class="keyword-item" style="display: flex; justify-content: space-between; padding: 0.8rem 0; border-bottom: 1px solid rgba(255,255,255,0.02);">
+                            <span class="keyword-name" style="color: var(--color-text-white); font-weight: 500;">Patagonian Ridges</span>
+                            <span class="keyword-stats" style="color: var(--color-text-muted); font-size: 0.85rem;">+$2,450 spent</span>
+                        </div>
+                        <div class="keyword-item" style="display: flex; justify-content: space-between; padding: 0.8rem 0; border-bottom: 1px solid rgba(255,255,255,0.02);">
+                            <span class="keyword-name" style="color: var(--color-text-white); font-weight: 500;">Serengeti Grasslands</span>
+                            <span class="keyword-stats" style="color: var(--color-text-muted); font-size: 0.85rem;">+$5,400 spent</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Custom preloader percentage simulation for dashboard
+        const preloader = document.querySelector('.preloader');
+        const percentage = document.querySelector('.preloader-percentage');
+        let count = 0;
+        const interval = setInterval(() => { count += 8; percentage.textContent = count + '%'; if (count >= 100) { clearInterval(interval); preloader.classList.add('fade-out'); } }, 15);
+    </script>
+</body>
+</html>

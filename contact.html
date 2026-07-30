@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adventures | Plan Your Expedition</title>
+  <!-- FontAwesome for Premium Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Core stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ==========================================================================
+       Header / Navigation Bar
+       ========================================================================== -->
+  <header class="header scrolled"> <!-- default solid for subpages -->
+    <div class="container header-container">
+      <a href="index.html" class="logo" id="headerLogo">
+        <img src="images/logo.webp" alt="Logo" class="logo-img">
+      </a>
+      
+      <!-- Drawer Menu (acts as navbar on desktop and mobile drawer) -->
+      <nav class="navbar">
+        <div class="drawer-header">
+          <a href="index.html" class="logo">
+            <img src="images/logo.webp" alt="Logo" class="logo-img">
+            
+          </a>
+          <button class="drawer-close" aria-label="Close Menu"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        
+        <div class="drawer-search">
+          <div style="position: relative; width: 100%;">
+            <input type="text" placeholder="Search destinations..." onkeyup="if(event.key === 'Enter') { location.href='destinations.html?search=' + encodeURIComponent(this.value); }">
+            <i class="fa-solid fa-magnifying-glass" style="position: absolute; right: 1rem; top: 50%; transform: translateY(-50%); color: var(--color-text-muted); pointer-events: none;"></i>
+          </div>
+        </div>
+
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-home">Home</a></li>
+          <li><a href="destinations.html" class="nav-destinations">Destinations</a></li>
+          <li><a href="packages.html" class="nav-packages">Packages</a></li>
+          <li><a href="about.html" class="nav-about">About Us</a></li>
+          <li><a href="contact.html" class="nav-contact active">Contact</a></li>
+        </ul>
+        
+        <div class="nav-mobile-cta">
+          <a href="login.html" class="btn btn-secondary">Login</a>
+          <a href="contact.html" class="btn btn-primary">Book Now</a>
+        </div>
+        
+        <div class="drawer-contact-info">
+          <h5>Contact Info</h5>
+          <p><i class="fa-solid fa-phone"></i> +1 (800) 555-ADVENTURES</p>
+          <p><i class="fa-solid fa-envelope"></i> expeditions@adventures.com</p>
+          <p><i class="fa-solid fa-location-dot"></i> 800 Wilderness Ridge, Boulder, CO</p>
+        </div>
+      </nav>
+      
+      <div class="nav-controls">
+        <a href="login.html" class="btn btn-secondary btn-sm"><i class="fa-solid fa-right-to-bracket"></i> Login</a>
+        <a href="contact.html" class="btn btn-primary btn-sm">Book Now</a>
+        <button class="menu-toggle" aria-label="Toggle Menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       Subpage Hero
+       ========================================================================== -->
+  <section class="subpage-hero" style="background-image: url('images/hero-bg.webp');">
+    <div class="subpage-hero-content">
+      <span class="section-subtitle">Reach Out</span>
+      <h1>Inquire & Reserve</h1>
+      <p>Fill out the fields below, and our specialized coordinators will craft your perfect route plan.</p>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       Contact Form Card Section
+       ========================================================================== -->
+  <!-- ==========================================================================
+       Contact Form & Coordinates Section
+       ========================================================================== -->
+  <section class="section" id="contact-page-form" style="background-color: var(--color-primary); padding: 6rem 0;">
+    <div class="container">
+      <div class="contact-grid">
+        
+        <!-- LEFT COLUMN: INQUIRIES DESK & DETAILS & MAP -->
+        <div class="contact-info-wrap slide-left-element">
+          <span class="section-tag" style="background: rgba(255, 122, 0, 0.1); border-color: rgba(255, 122, 0, 0.25); color: var(--color-accent-orange); display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.4rem 1rem; border-radius: var(--border-radius-sm); font-size: 0.85rem; font-weight: 600; text-transform: uppercase; margin-bottom: 1.25rem;"><i class="fa-solid fa-headset"></i> INQUIRIES DESK</span>
+          <h2 class="section-title" style="font-size: 2.5rem; margin: 1rem 0 0.75rem 0; color: var(--color-text-white); font-family: var(--font-heading); line-height: 1.2;">Connect With Us. We're Here to Listen.</h2>
+          <p style="color: var(--color-text-muted); font-size: 0.95rem; line-height: 1.6; margin-bottom: 2.5rem;">Get in touch for custom expedition coordinates, gear checklists, or general wilderness base camp inquiries.</p>
+          
+          <!-- CONTACT BLOCKS -->
+          <div style="display: flex; flex-direction: column; gap: 1.75rem; margin-bottom: 2.5rem;">
+              
+              <!-- BLOCK 1: LOCATION -->
+              <div style="display: flex; gap: 1.25rem; align-items: center;">
+                  <div style="width: 46px; height: 46px; border-radius: var(--border-radius-sm); background: rgba(255, 122, 0, 0.1); color: var(--color-accent-orange); display: flex; align-items: center; justify-content: center; font-size: 1.2rem; flex-shrink: 0; border: 1px solid rgba(255, 122, 0, 0.2);">
+                      <i class="fa-solid fa-location-dot"></i>
+                  </div>
+                  <div>
+                      <h4 style="font-size: 1rem; color: var(--color-text-white); margin-bottom: 0.2rem;">HQ Base Camp</h4>
+                      <p style="font-size: 0.88rem; color: var(--color-text-muted);">800 Wilderness Ridge, Suite A, Boulder, CO 80301</p>
+                  </div>
+              </div>
+
+              <!-- BLOCK 2: EMAIL -->
+              <div style="display: flex; gap: 1.25rem; align-items: center;">
+                  <div style="width: 46px; height: 46px; border-radius: var(--border-radius-sm); background: rgba(16, 185, 129, 0.1); color: var(--color-accent-green); display: flex; align-items: center; justify-content: center; font-size: 1.2rem; flex-shrink: 0; border: 1px solid rgba(16, 185, 129, 0.2);">
+                      <i class="fa-solid fa-envelope"></i>
+                  </div>
+                  <div>
+                      <h4 style="font-size: 1rem; color: var(--color-text-white); margin-bottom: 0.2rem;">Email Communication</h4>
+                      <p style="font-size: 0.88rem; color: var(--color-text-muted);">expeditions@adventures.com</p>
+                  </div>
+              </div>
+
+              <!-- BLOCK 3: HOURS -->
+              <div style="display: flex; gap: 1.25rem; align-items: center;">
+                  <div style="width: 46px; height: 46px; border-radius: var(--border-radius-sm); background: rgba(30, 41, 59, 0.5); color: var(--color-text-muted); display: flex; align-items: center; justify-content: center; font-size: 1.2rem; flex-shrink: 0; border: 1px solid var(--color-border-glass);">
+                      <i class="fa-solid fa-clock"></i>
+                  </div>
+                  <div>
+                      <h4 style="font-size: 1rem; color: var(--color-text-white); margin-bottom: 0.2rem;">Working Hours</h4>
+                      <p style="font-size: 0.88rem; color: var(--color-text-muted);">Mon - Fri: 10:00 AM - 06:00 PM (Mountain Standard)</p>
+                  </div>
+              </div>
+
+          </div>
+
+          <!-- EMBEDDED DARK GOOGLE MAP -->
+          <div class="contact-map-wrap glass-card" style="padding: 0; overflow: hidden; border-radius: var(--border-radius-md); border: 1px solid var(--color-border-glass); box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+              <iframe 
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3056.8837233075253!2d-105.27924402345244!3d40.01498567150965!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x876bec244f77cbb5%3A0x63fa3db239c0d95d!2sBoulder%2C%20CO!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus" 
+                  width="100%" 
+                  height="100%" 
+                  style="border:0; filter: invert(90%) hue-rotate(180deg) contrast(1.2);" 
+                  allowfullscreen="" 
+                  loading="lazy" 
+                  title="Adventures Boulder HQ Location Map"
+                  referrerpolicy="no-referrer-when-downgrade">
+              </iframe>
+          </div>
+        </div>
+
+        <!-- Glassmorphic Card Form side -->
+        <div class="contact-form-card glass-panel slide-right-element" style="background: #070d1e; color: var(--color-text-white); border: 1px solid var(--color-border-glass); border-top: 1px solid rgba(255, 255, 255, 0.18);">
+          <h3 class="contact-form-title">Trek Inquiry Form</h3>
+          <p class="contact-form-desc">Complete the fields below. Fields marked with an asterisk are mandatory.</p>
+          
+          <form class="contact-form" id="contactInquiryForm" novalidate>
+            
+            <!-- Name -->
+            <div class="form-group">
+              <label for="contactName">Full Name *</label>
+              <input type="text" id="contactName" class="form-control" placeholder="E.g. John Doe" required>
+              <span class="error-msg">Name must contain letters and spaces only.</span>
+            </div>
+
+            <!-- Email -->
+            <div class="form-group">
+              <label for="contactEmail">Email Address *</label>
+              <input type="email" id="contactEmail" class="form-control" placeholder="E.g. john@example.com" required>
+              <span class="error-msg">Please enter a valid email.</span>
+            </div>
+
+            <!-- Mobile Number -->
+            <div class="form-group">
+              <label for="contactPhone">Mobile Number *</label>
+              <input type="tel" id="contactPhone" class="form-control" placeholder="10 Digits Only" required>
+              <span class="error-msg">Must be exactly 10 digits.</span>
+            </div>
+
+            <!-- Target Destination -->
+            <div class="form-group">
+              <label for="contactDest">Destination *</label>
+              <input type="text" id="contactDest" class="form-control" placeholder="E.g. Swiss Alps" required>
+              <span class="error-msg">Destination is mandatory.</span>
+            </div>
+
+            <!-- Message with character validation -->
+            <div class="form-group full-width">
+              <label for="contactMessage">Inquiry details * (Min 20, Max 500 chars)</label>
+              <textarea id="contactMessage" class="form-control" placeholder="Tell us about your outdoor experience, gear requirements, or queries..." required></textarea>
+              <span class="error-msg">Must be between 20 and 500 characters.</span>
+            </div>
+
+            <!-- Terms and conditions checkbox -->
+            <div class="checkbox-group">
+              <label class="checkbox-label" for="contactTerms">
+                <input type="checkbox" id="contactTerms" required>
+                <div class="custom-checkbox">
+                  <i class="fa-solid fa-check"></i>
+                </div>
+                <span>I read and accept the adventure safety agreement terms *</span>
+              </label>
+              <span class="error-msg">You must accept the terms to proceed.</span>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="btn btn-primary">
+              <i class="fa-solid fa-paper-plane"></i> Submit Reservation Request
+            </button>
+
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       Footer Section
+       ========================================================================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        
+        <!-- Brand -->
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <img src="images/logo.webp" alt="Logo" class="logo-img">
+            
+          </a>
+          <p>Premium, high-performance wilderness tours designed for responsible, adventurous spirits.</p>
+          <div class="social-links">
+            <a href="404.html" class="social-icon" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="404.html" class="social-icon" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+            <a href="404.html" class="social-icon" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="404.html" class="social-icon" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-links-col">
+          <h3>Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="destinations.html">Our Destinations</a></li>
+            <li><a href="packages.html">Adventure Deals</a></li>
+            <li><a href="about.html">Corporate Ethos</a></li>
+            <li><a href="about.html#guides">Expert Guides</a></li>
+          </ul>
+        </div>
+
+        <!-- Legal/Other Links -->
+        <div class="footer-links-col">
+          <h3>Support</h3>
+          <ul class="footer-links">
+            <li><a href="contact.html">Contact Coordinates</a></li>
+            <li><a href="#">Terms & Agreements</a></li>
+            <li><a href="#">Cancellation Policies</a></li>
+          </ul>
+        </div>
+
+        <!-- Newsletter Subscription -->
+        <div class="footer-newsletter">
+          <h3>Newsletter</h3>
+          <p>Get quarterly wilderness logs and exclusive early-bird package discounts.</p>
+          <form class="newsletter-form" id="newsletterForm" onsubmit="event.preventDefault(); alert('Subscribed successfully!'); this.reset();">
+            <input type="email" class="form-control" placeholder="Your Email" required aria-label="Newsletter email address">
+            <button type="submit" class="btn btn-green">Join</button>
+          </form>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Adventures Inc. All rights reserved. Designed for responsible exploration.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       Glassmorphic Success Modal Popup
+       ========================================================================== -->
+  <div class="success-modal" id="successModal">
+    <div class="success-modal-card glass-panel" style="background: var(--color-primary); color: var(--color-text-white); border: 1px solid var(--color-border-glass);">
+      <div class="success-icon-wrap">
+        <i class="fa-solid fa-circle-check"></i>
+      </div>
+      <h2 class="success-title">Expedition Registered!</h2>
+      <p class="success-msg" id="successMsgText">Your inquiry has been successfully transmitted. Our base camp coordinator will contact you shortly.</p>
+      <button class="btn btn-green" id="closeModalBtn">Proceed</button>
+    </div>
+  </div>
+
+  <!-- Core JavaScript -->
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adventures | Adventure Packages</title>
+  <!-- FontAwesome for Premium Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Core stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ==========================================================================
+       Header / Navigation Bar
+       ========================================================================== -->
+  <header class="header scrolled"> <!-- default solid for subpages -->
+    <div class="container header-container">
+      <a href="index.html" class="logo" id="headerLogo">
+        <img src="images/logo.webp" alt="Logo" class="logo-img">
+      </a>
+      
+      <!-- Drawer Menu (acts as navbar on desktop and mobile drawer) -->
+      <nav class="navbar">
+        <div class="drawer-header">
+          <a href="index.html" class="logo">
+            <img src="images/logo.webp" alt="Logo" class="logo-img">
+            
+          </a>
+          <button class="drawer-close" aria-label="Close Menu"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        
+        <div class="drawer-search">
+          <div style="position: relative; width: 100%;">
+            <input type="text" placeholder="Search destinations..." onkeyup="if(event.key === 'Enter') { location.href='destinations.html?search=' + encodeURIComponent(this.value); }">
+            <i class="fa-solid fa-magnifying-glass" style="position: absolute; right: 1rem; top: 50%; transform: translateY(-50%); color: var(--color-text-muted); pointer-events: none;"></i>
+          </div>
+        </div>
+
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-home">Home</a></li>
+          <li><a href="destinations.html" class="nav-destinations">Destinations</a></li>
+          <li><a href="packages.html" class="nav-packages active">Packages</a></li>
+          <li><a href="about.html" class="nav-about">About Us</a></li>
+          <li><a href="contact.html" class="nav-contact">Contact</a></li>
+        </ul>
+        
+        <div class="nav-mobile-cta">
+          <a href="login.html" class="btn btn-secondary">Login</a>
+          <a href="contact.html" class="btn btn-primary">Book Now</a>
+        </div>
+        
+        <div class="drawer-contact-info">
+          <h5>Contact Info</h5>
+          <p><i class="fa-solid fa-phone"></i> +1 (800) 555-ADVENTURES</p>
+          <p><i class="fa-solid fa-envelope"></i> expeditions@adventures.com</p>
+          <p><i class="fa-solid fa-location-dot"></i> 800 Wilderness Ridge, Boulder, CO</p>
+        </div>
+      </nav>
+      
+      <div class="nav-controls">
+        <a href="login.html" class="btn btn-secondary btn-sm"><i class="fa-solid fa-right-to-bracket"></i> Login</a>
+        <a href="contact.html" class="btn btn-primary btn-sm">Book Now</a>
+        <button class="menu-toggle" aria-label="Toggle Menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       Subpage Hero
+       ========================================================================== -->
+  <section class="subpage-hero" style="background-image: url('images/hero-bg.webp');">
+    <div class="subpage-hero-content">
+      <span class="section-subtitle">Plan Your Journey</span>
+      <h1>Adventure Packages</h1>
+      <p>Bespoke itineraries crafted by professional mountaineers and eco-guides.</p>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       Packages Catalogue
+       ========================================================================== -->
+  <section class="section" id="packages-showcase">
+    <div class="container">
+      
+      <!-- Difficulty Filter Bar -->
+      <div class="filter-container fade-in-element">
+        <button class="filter-btn active" data-filter="all">All Difficulties</button>
+        <button class="filter-btn" data-filter="easy">Easy (Family Friendly)</button>
+        <button class="filter-btn" data-filter="medium">Medium (Moderate Hike)</button>
+        <button class="filter-btn" data-filter="advanced">Advanced (Technical Climbs)</button>
+      </div>
+
+      <!-- Packages Grid -->
+      <div class="packages-grid">
+        
+        <!-- Package 1 -->
+        <div class="pkg-card glass-panel filterable-item fade-in-element" data-category="advanced">
+          <div class="pkg-img-wrap">
+            <img src="images/pkg-1.webp" alt="Climbers climbing snowy slopes" class="pkg-img" loading="lazy">
+            <span class="pkg-badge">Advanced</span>
+          </div>
+          <div class="pkg-content">
+            <div class="pkg-meta">
+              <span><i class="fa-solid fa-location-dot"></i> Switzerland</span>
+              <span><i class="fa-solid fa-calendar"></i> 7 Days</span>
+            </div>
+            <h3 class="pkg-title">Alpine Summit Ascent</h3>
+            <div class="pkg-rating">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <span>(48 Reviews)</span>
+            </div>
+            <div class="pkg-footer">
+              <div class="pkg-price">$1,899 <span>/ person</span></div>
+              <a href="contact.html?dest=Alpine Summit Ascent" class="btn btn-green">Explore</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Package 2 -->
+        <div class="pkg-card glass-panel filterable-item fade-in-element" data-category="medium">
+          <div class="pkg-img-wrap">
+            <img src="images/pkg-2.webp" alt="Wildlife viewing jeep in savannah" class="pkg-img" loading="lazy">
+            <span class="pkg-badge">Medium</span>
+          </div>
+          <div class="pkg-content">
+            <div class="pkg-meta">
+              <span><i class="fa-solid fa-location-dot"></i> Tanzania</span>
+              <span><i class="fa-solid fa-calendar"></i> 5 Days</span>
+            </div>
+            <h3 class="pkg-title">Wild Serengeti Safari</h3>
+            <div class="pkg-rating">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star-half-stroke"></i>
+              <span>(64 Reviews)</span>
+            </div>
+            <div class="pkg-footer">
+              <div class="pkg-price">$2,450 <span>/ person</span></div>
+              <a href="contact.html?dest=Wild Serengeti Safari" class="btn btn-green">Explore</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Package 3 -->
+        <div class="pkg-card glass-panel filterable-item fade-in-element" data-category="easy">
+          <div class="pkg-img-wrap">
+            <img src="images/pkg-3.webp" alt="Dense green rainforest river" class="pkg-img" loading="lazy">
+            <span class="pkg-badge">Easy</span>
+          </div>
+          <div class="pkg-content">
+            <div class="pkg-meta">
+              <span><i class="fa-solid fa-location-dot"></i> Indonesia</span>
+              <span><i class="fa-solid fa-calendar"></i> 9 Days</span>
+            </div>
+            <h3 class="pkg-title">Bali Heritage Trek</h3>
+            <div class="pkg-rating">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <span>(52 Reviews)</span>
+            </div>
+            <div class="pkg-footer">
+              <div class="pkg-price">$1,299 <span>/ person</span></div>
+              <a href="contact.html?dest=Bali Heritage Trek" class="btn btn-green">Explore</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Package 4 -->
+        <div class="pkg-card glass-panel filterable-item fade-in-element" data-category="easy">
+          <div class="pkg-img-wrap">
+            <img src="images/gallery-4.webp" alt="Balloons hovering over red dunes" class="pkg-img" loading="lazy">
+            <span class="pkg-badge">Easy</span>
+          </div>
+          <div class="pkg-content">
+            <div class="pkg-meta">
+              <span><i class="fa-solid fa-location-dot"></i> Morocco</span>
+              <span><i class="fa-solid fa-calendar"></i> 5 Days</span>
+            </div>
+            <h3 class="pkg-title">Sahara Desert Ballooning</h3>
+            <div class="pkg-rating">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <span>(37 Reviews)</span>
+            </div>
+            <div class="pkg-footer">
+              <div class="pkg-price">$1,450 <span>/ person</span></div>
+              <a href="contact.html?dest=Sahara Desert Ballooning" class="btn btn-green">Explore</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Package 5 -->
+        <div class="pkg-card glass-panel filterable-item fade-in-element" data-category="medium">
+          <div class="pkg-img-wrap">
+            <img src="images/gallery-5.webp" alt="Diver swimming with sea turtle" class="pkg-img" loading="lazy">
+            <span class="pkg-badge">Medium</span>
+          </div>
+          <div class="pkg-content">
+            <div class="pkg-meta">
+              <span><i class="fa-solid fa-location-dot"></i> Australia</span>
+              <span><i class="fa-solid fa-calendar"></i> 7 Days</span>
+            </div>
+            <h3 class="pkg-title">Reef Diver Expedition</h3>
+            <div class="pkg-rating">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star-half-stroke"></i>
+              <span>(43 Reviews)</span>
+            </div>
+            <div class="pkg-footer">
+              <div class="pkg-price">$1,720 <span>/ person</span></div>
+              <a href="contact.html?dest=Reef Diver Expedition" class="btn btn-green">Explore</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Package 6 -->
+        <div class="pkg-card glass-panel filterable-item fade-in-element" data-category="advanced">
+          <div class="pkg-img-wrap">
+            <img src="images/gallery-6.webp" alt="Climber scaling vertical rock cliff" class="pkg-img" loading="lazy">
+            <span class="pkg-badge">Advanced</span>
+          </div>
+          <div class="pkg-content">
+            <div class="pkg-meta">
+              <span><i class="fa-solid fa-location-dot"></i> USA</span>
+              <span><i class="fa-solid fa-calendar"></i> 6 Days</span>
+            </div>
+            <h3 class="pkg-title">Grand Canyon Climber</h3>
+            <div class="pkg-rating">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <span>(58 Reviews)</span>
+            </div>
+            <div class="pkg-footer">
+              <div class="pkg-price">$1,599 <span>/ person</span></div>
+              <a href="contact.html?dest=Grand Canyon Climber" class="btn btn-green">Explore</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       Footer Section
+       ========================================================================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        
+        <!-- Brand -->
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <img src="images/logo.webp" alt="Logo" class="logo-img">
+            
+          </a>
+          <p>Premium, high-performance wilderness tours designed for responsible, adventurous spirits.</p>
+          <div class="social-links">
+            <a href="404.html" class="social-icon" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="404.html" class="social-icon" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+            <a href="404.html" class="social-icon" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="404.html" class="social-icon" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-links-col">
+          <h3>Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="destinations.html">Our Destinations</a></li>
+            <li><a href="packages.html">Adventure Deals</a></li>
+            <li><a href="about.html">Corporate Ethos</a></li>
+            <li><a href="about.html#guides">Expert Guides</a></li>
+          </ul>
+        </div>
+
+        <!-- Legal/Other Links -->
+        <div class="footer-links-col">
+          <h3>Support</h3>
+          <ul class="footer-links">
+            <li><a href="contact.html">Contact Coordinates</a></li>
+            <li><a href="#">Terms & Agreements</a></li>
+            <li><a href="#">Cancellation Policies</a></li>
+          </ul>
+        </div>
+
+        <!-- Newsletter Subscription -->
+        <div class="footer-newsletter">
+          <h3>Newsletter</h3>
+          <p>Get quarterly wilderness logs and exclusive early-bird package discounts.</p>
+          <form class="newsletter-form" id="newsletterForm" onsubmit="event.preventDefault(); alert('Subscribed successfully!'); this.reset();">
+            <input type="email" class="form-control" placeholder="Your Email" required aria-label="Newsletter email address">
+            <button type="submit" class="btn btn-green">Join</button>
+          </form>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Adventures Inc. All rights reserved. Designed for responsible exploration.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Core JavaScript -->
+  <script src="js/main.js"></script>
+</body>
+</html>
