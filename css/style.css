@@ -1524,7 +1524,7 @@ body.menu-open, html.menu-open {
 
 .contact-form {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr;
   gap: 20px;
 }
 
@@ -1533,7 +1533,7 @@ body.menu-open, html.menu-open {
 }
 
 .contact-form .form-group.full-width {
-  grid-column: span 2;
+  grid-column: span 1;
 }
 
 .contact-form label {
@@ -1611,30 +1611,34 @@ body.menu-open, html.menu-open {
 }
 
 .contact-form .btn {
-  grid-column: span 2;
+  grid-column: span 1;
   margin-top: 10px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   .contact-grid {
-    grid-template-columns: 1fr;
-    gap: 40px;
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
   }
   
   .contact-form-card {
-    padding: 30px;
+    padding: 30px !important;
   }
   
   .contact-form {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr !important;
   }
   
   .contact-form .form-group {
-    grid-column: span 1;
+    grid-column: span 1 !important;
   }
   
   .contact-form .form-group.full-width {
-    grid-column: span 1;
+    grid-column: span 1 !important;
+  }
+  
+  .contact-form .btn {
+    grid-column: span 1 !important;
   }
 }
 
@@ -2830,7 +2834,7 @@ body.light .sidebar-link:hover, body.light .sidebar-link.active {
 
 /* Custom Alert Modal Card */
 .custom-alert-overlay .custom-alert-modal {
-  width: 100%;
+  width: 90%;
   max-width: 400px;
   padding: 2.5rem 2rem;
   border-radius: var(--border-radius-md);
