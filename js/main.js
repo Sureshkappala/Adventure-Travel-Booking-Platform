@@ -466,6 +466,7 @@ function initFormValidations() {
 
     // Real-time validations
     nameInput.addEventListener('input', () => {
+      nameInput.value = nameInput.value.replace(/[^a-zA-Z\s]/g, '');
       const errorEl = nameInput.nextElementSibling;
       if (!nameInput.value.trim()) {
         markInvalid(nameInput, errorEl, 'Name is required.');
@@ -488,6 +489,7 @@ function initFormValidations() {
     });
 
     phoneInput.addEventListener('input', () => {
+      phoneInput.value = phoneInput.value.replace(/\D/g, '');
       const errorEl = phoneInput.nextElementSibling;
       if (!phoneInput.value) {
         markInvalid(phoneInput, errorEl, 'Mobile number is required.');
