@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Physical training logs and altitude simulated cardio tracking.">
+    <title>Cardio Tracker | Adventures</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body style="overflow-y: auto; background-color: var(--color-primary);">
+
+
+
+    <!-- MOBILE TOGGLE HEADER -->
+    <div class="db-mobile-header" style="display: none;">
+        <button class="db-hamburger" aria-label="Toggle Menu"><i class="fa-solid fa-bars"></i></button>
+        <a href="studio-portal.html" class="db-mobile-logo">
+            <div class="logo" style="pointer-events: none;"><img src="images/logo.webp" alt="Logo" class="logo-img"></div>
+        </a>
+        <div class="db-mobile-avatar user-avatar" style="width: 32px; height: 32px; border-radius: 50%; background: var(--color-accent-green); color: var(--color-primary); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.85rem;">EX</div>
+    </div>
+    
+    <!-- Sidebar Overlay -->
+    <div class="db-sidebar-overlay"></div>
+
+    <div class="db-container" style="display: flex; min-height: 100vh;">
+        <!-- COLLAPSIBLE SIDEBAR -->
+        <aside class="db-sidebar">
+            <button class="db-sidebar-close" aria-label="Close Menu" style="display: none;"><i class="fa-solid fa-xmark"></i></button>
+            <div style="overflow-y: auto; height: calc(100% - 60px); padding-right: 5px;">
+                <a href="studio-portal.html" class="sidebar-logo" style="text-decoration: none;">
+                    <div class="logo" style="margin: 0 auto 1.5rem auto; justify-content: center;"><img src="images/logo.webp" alt="Logo" class="logo-img"></div>
+                </a>
+                
+                <!-- Group 1: Main -->
+                <div class="sidebar-section-title" style="margin-top: 1rem;">Main</div>
+                <nav class="sidebar-menu">
+                    <a href="studio-portal.html" class="sidebar-link "><i class="fa-solid fa-chart-pie"></i> Control Board</a>
+                    <a href="destinations.html" class="sidebar-link"><i class="fa-solid fa-map-location-dot"></i> Browse Destinations</a>
+                    <a href="packages.html" class="sidebar-link"><i class="fa-solid fa-suitcase"></i> Expedition Packages</a>
+                </nav>
+
+                <!-- Group 2: Climbing Milestones -->
+                <div class="sidebar-section-title" style="margin-top: 1rem;">Wilderness Logs</div>
+                <nav class="sidebar-menu">
+                    <a href="permits-visas.html" class="sidebar-link "><i class="fa-solid fa-id-card"></i> Permits & Visas</a>
+                    <a href="gear-checklists.html" class="sidebar-link "><i class="fa-solid fa-list-check"></i> Gear Checklists</a>
+                </nav>
+
+                <!-- Group 3: Training Analytics -->
+                <div class="sidebar-section-title" style="margin-top: 1rem;">Health & Prep</div>
+                <nav class="sidebar-menu">
+                    <a href="cardio-tracker.html" class="sidebar-link active"><i class="fa-solid fa-heart-pulse"></i> Cardio Tracker</a>
+                    <a href="sat-communication.html" class="sidebar-link "><i class="fa-solid fa-satellite-dish"></i> SAT Communication</a>
+                </nav>
+            </div>
+            
+            <a href="login.html" class="signout-btn" id="dashboard-logout-btn" onclick="localStorage.clear();"><i class="fa-solid fa-right-from-bracket"></i> Sign Out</a>
+        </aside>
+
+        <!-- MAIN PANEL -->
+        <main class="db-main">
+            <!-- Welcome Hero -->
+            <div class="db-welcome-hero" style="border-radius: var(--border-radius-md); padding: 2rem 2.5rem; margin-bottom: 2rem;">
+                <h1>Physical Cardio Tracker</h1>
+                <p>Track your physical preparedness. Add recent cardio training sessions and monitor altitude acclimatization.</p>
+            </div>
+
+            <!-- Stats Row -->
+            <div class="db-stats-row">
+                <div class="stat-card">
+                    <div>
+                        <div class="stat-label">Cardio Level</div>
+                        <h3 class="stat-value" id="cardio-level">Advanced</h3>
+                    </div>
+                    <div class="stat-icon-wrapper" style="background: rgba(16, 185, 129, 0.1); color: var(--color-accent-green);"><i class="fa-solid fa-gauge-high"></i></div>
+                </div>
+                <div class="stat-card">
+                    <div>
+                        <div class="stat-label">VO2 Max Index</div>
+                        <h3 class="stat-value">54 ml/kg</h3>
+                    </div>
+                    <div class="stat-icon-wrapper" style="background: rgba(255, 122, 0, 0.1); color: var(--color-accent-orange);"><i class="fa-solid fa-lungs"></i></div>
+                </div>
+                <div class="stat-card">
+                    <div>
+                        <div class="stat-label">Avg Workout HR</div>
+                        <h3 class="stat-value">138 BPM</h3>
+                    </div>
+                    <div class="stat-icon-wrapper" style="background: rgba(59, 130, 246, 0.1); color: #3b82f6;"><i class="fa-solid fa-heart-pulse"></i></div>
+                </div>
+                <div class="stat-card">
+                    <div>
+                        <div class="stat-label">Simulated Altitude</div>
+                        <h3 class="stat-value">3,500m Alt</h3>
+                    </div>
+                    <div class="stat-icon-wrapper" style="background: rgba(168, 85, 247, 0.1); color: #a855f7;"><i class="fa-solid fa-mountain"></i></div>
+                </div>
+            </div>
+
+            <!-- Main Layout Grid -->
+            <div class="db-grid">
+                <div class="grid-left">
+                    <!-- Table Logs -->
+                    <div class="panel-box">
+                        <div class="panel-box-header" style="border-bottom: 1px solid var(--color-border-glass); padding-bottom: 1rem; margin-bottom: 1.5rem;">
+                            <h3 class="panel-box-title" style="font-size: 1.15rem; font-weight: 700; color: var(--color-text-white);">Cardio Training Logs</h3>
+                        </div>
+                        <table class="db-table" id="cardio-table" style="width: 100%; border-collapse: collapse; text-align: left;">
+                            <thead>
+                                <tr>
+                                    <th>Workout Type</th>
+                                    <th>Distance / Duration</th>
+                                    <th>Avg Heart Rate</th>
+                                    <th>Date Completed</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="text-light-value" data-label="Workout" style="color: var(--color-text-white); font-weight: 600;">Mountain Trail Run</td>
+                                    <td data-label="Distance">12.4 KM</td>
+                                    <td data-label="Avg HR">145 BPM</td>
+                                    <td data-label="Date">Jul 28, 2026</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-light-value" data-label="Workout" style="color: var(--color-text-white); font-weight: 600;">High-Altitude Chamber Walk</td>
+                                    <td data-label="Distance">45 Mins</td>
+                                    <td data-label="Avg HR">122 BPM</td>
+                                    <td data-label="Date">Jul 25, 2026</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Log workout form -->
+                    <div class="panel-box" style="margin-top: 1.8rem;">
+                        <h3 class="panel-box-title" style="font-size: 1.15rem; font-weight: 700; color: var(--color-text-white); margin-bottom: 1.5rem; border-bottom: 1px solid var(--color-border-glass); padding-bottom: 0.5rem;">Log Workout Session</h3>
+                        <form id="workout-form">
+                            <div class="form-grid-2col">
+                                <div class="form-group" style="margin-bottom: 1rem;">
+                                    <label for="w-type">Workout Category</label>
+                                    <select id="w-type" class="form-control" style="background: rgba(255,255,255,0.02); border: 1px solid var(--color-border-glass);">
+                                        <option value="Trail Run" style="background:#0b1528;">Mountain Trail Run</option>
+                                        <option value="Chamber Walk" style="background:#0b1528;">Altitude Chamber Walk</option>
+                                        <option value="Alpine Row" style="background:#0b1528;">Alpine Rowing</option>
+                                    </select>
+                                </div>
+                                <div class="form-group" style="margin-bottom: 1rem;">
+                                    <label for="w-dist">Distance / Duration</label>
+                                    <input type="text" id="w-dist" class="form-control" placeholder="e.g. 10 KM or 60 Mins" required style="background: rgba(255,255,255,0.02); border: 1px solid var(--color-border-glass);">
+                                </div>
+                                <div class="form-group" style="margin-bottom: 1rem;">
+                                    <label for="w-hr">Average Heart Rate (BPM)</label>
+                                    <input type="number" id="w-hr" class="form-control" placeholder="e.g. 135" min="50" max="220" required style="background: rgba(255,255,255,0.02); border: 1px solid var(--color-border-glass);">
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary" style="background: #b58a63 !important; color: #000; font-weight: 700; border: none; padding: 0.75rem 1.5rem; margin-top: 0.5rem; cursor: pointer;">Log Workout Session</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="grid-right">
+                    <!-- Progress Card -->
+                    <div class="panel-box">
+                        <h3 class="panel-box-title" style="font-size: 1.15rem; font-weight: 700; color: var(--color-text-white); margin-bottom: 1.5rem;">Acclimatization Milestones</h3>
+                        <div class="widget-metric-row" style="margin-bottom: 1.5rem;">
+                            <div class="widget-metric-header" style="display: flex; justify-content: space-between; font-size: 0.85rem; color: var(--color-text-muted); margin-bottom: 0.5rem;">
+                                <span>Low-Oxygen Efficiency</span>
+                                <span class="text-light-value" style="color: var(--color-text-white); font-weight: 600;">82%</span>
+                            </div>
+                            <div style="background: rgba(255,255,255,0.05); height: 6px; border-radius: 999px; overflow: hidden;">
+                                <div style="width: 82%; background-color: #3b82f6; height: 100%;"></div>
+                            </div>
+                        </div>
+                        <div class="widget-metric-row">
+                            <div class="widget-metric-header" style="display: flex; justify-content: space-between; font-size: 0.85rem; color: var(--color-text-muted); margin-bottom: 0.5rem;">
+                                <span>Physical Stamina Rating</span>
+                                <span class="text-light-value" style="color: var(--color-text-white); font-weight: 600;">94%</span>
+                            </div>
+                            <div style="background: rgba(255,255,255,0.05); height: 6px; border-radius: 999px; overflow: hidden;">
+                                <div style="width: 94%; background-color: var(--color-accent-green); height: 100%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Client role authorization gate
+        const userRole = localStorage.getItem('loggedInUserRole') || 'client';
+        if (userRole !== 'client') {
+            window.location.href = 'studio-portal.html';
+        }
+
+        // Custom workout logging interaction
+        document.getElementById('workout-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const wType = document.getElementById('w-type').value;
+            const wDist = document.getElementById('w-dist').value;
+            const wHr = document.getElementById('w-hr').value;
+
+            const tbody = document.querySelector('#cardio-table tbody');
+            const newRow = document.createElement('tr');
+            
+            const today = new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+
+            newRow.innerHTML = `
+                <td class="text-light-value" data-label="Workout" style="color: var(--color-text-white); font-weight: 600;">${wType}</td>
+                <td data-label="Distance">${wDist}</td>
+                <td data-label="Avg HR">${wHr} BPM</td>
+                <td data-label="Date">${today}</td>
+            `;
+
+            tbody.prepend(newRow);
+            window.showCustomAlert('Workout log saved successfully.', 'success');
+            this.reset();
+        });
+
+        // Custom preloader
+        const preloader = document.querySelector('.preloader');
+        const percentage = document.querySelector('.preloader-percentage');
+        let count = 0;
+        const interval = setInterval(() => { count += 8; percentage.textContent = count + '%'; if (count >= 100) { clearInterval(interval); preloader.classList.add('fade-out'); } }, 15);
+    </script>
+</body>
+</html>

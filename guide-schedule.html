@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Guide expedition tour calendar and assigned climber schedules.">
+    <title>Guide Schedule | Adventures</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body style="overflow-y: auto; background-color: var(--color-primary);">
+
+
+
+    <!-- MOBILE TOGGLE HEADER -->
+    <div class="db-mobile-header" style="display: none;">
+        <button class="db-hamburger" aria-label="Toggle Menu"><i class="fa-solid fa-bars"></i></button>
+        <a href="studio-portal.html" class="db-mobile-logo">
+            <div class="logo" style="pointer-events: none;"><img src="images/logo.webp" alt="Logo" class="logo-img"></div>
+        </a>
+        <div class="db-mobile-avatar user-avatar" style="width: 32px; height: 32px; border-radius: 50%; background: var(--color-accent-green); color: var(--color-primary); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.85rem;">EX</div>
+    </div>
+    
+    <!-- Sidebar Overlay -->
+    <div class="db-sidebar-overlay"></div>
+
+    <div class="db-container" style="display: flex; min-height: 100vh;">
+        <!-- COLLAPSIBLE SIDEBAR -->
+        <aside class="db-sidebar">
+            <button class="db-sidebar-close" aria-label="Close Menu" style="display: none;"><i class="fa-solid fa-xmark"></i></button>
+            <div style="overflow-y: auto; height: calc(100% - 60px); padding-right: 5px;">
+                <a href="studio-portal.html" class="sidebar-logo" style="text-decoration: none;">
+                    <div class="logo" style="margin: 0 auto 1.5rem auto; justify-content: center;"><img src="images/logo.webp" alt="Logo" class="logo-img"></div>
+                </a>
+                
+                <!-- Group 1: Main -->
+                <div class="sidebar-section-title" style="margin-top: 1rem;">Main</div>
+                <nav class="sidebar-menu">
+                    <a href="studio-portal.html" class="sidebar-link "><i class="fa-solid fa-chart-pie"></i> Control Board</a>
+                    <a href="destinations.html" class="sidebar-link"><i class="fa-solid fa-map-location-dot"></i> Browse Destinations</a>
+                    <a href="packages.html" class="sidebar-link"><i class="fa-solid fa-suitcase"></i> Expedition Packages</a>
+                </nav>
+
+                <!-- Group 2: Climbing Milestones -->
+                <div class="sidebar-section-title" style="margin-top: 1rem;">Wilderness Logs</div>
+                <nav class="sidebar-menu">
+                    <a href="permits-visas.html" class="sidebar-link "><i class="fa-solid fa-id-card"></i> Permits & Visas</a>
+                    <a href="gear-checklists.html" class="sidebar-link "><i class="fa-solid fa-list-check"></i> Gear Checklists</a>
+                </nav>
+
+                <!-- Group 3: Training Analytics -->
+                <div class="sidebar-section-title" style="margin-top: 1rem;">Health & Prep</div>
+                <nav class="sidebar-menu">
+                    <a href="cardio-tracker.html" class="sidebar-link "><i class="fa-solid fa-heart-pulse"></i> Cardio Tracker</a>
+                    <a href="sat-communication.html" class="sidebar-link "><i class="fa-solid fa-satellite-dish"></i> SAT Communication</a>
+                </nav>
+            </div>
+            
+            <a href="login.html" class="signout-btn" id="dashboard-logout-btn" onclick="localStorage.clear();"><i class="fa-solid fa-right-from-bracket"></i> Sign Out</a>
+        </aside>
+
+        <!-- MAIN PANEL -->
+        <main class="db-main">
+            <!-- Welcome Hero -->
+            <div class="db-welcome-hero" style="border-radius: var(--border-radius-md); padding: 2rem 2.5rem; margin-bottom: 2rem;">
+                <h1>Guide Operations Calendar</h1>
+                <p>Monitor your active alpine schedules, assign co-guides to treks, and check route conditions.</p>
+            </div>
+
+            <!-- Stats Row -->
+            <div class="db-stats-row">
+                <div class="stat-card">
+                    <div>
+                        <div class="stat-label">Assigned Tours</div>
+                        <h3 class="stat-value">4 Active</h3>
+                    </div>
+                    <div class="stat-icon-wrapper" style="background: rgba(16, 185, 129, 0.1); color: var(--color-accent-green);"><i class="fa-solid fa-calendar-day"></i></div>
+                </div>
+                <div class="stat-card">
+                    <div>
+                        <div class="stat-label">Total Guided Days</div>
+                        <h3 class="stat-value">18 Days Out</h3>
+                    </div>
+                    <div class="stat-icon-wrapper" style="background: rgba(255, 122, 0, 0.1); color: var(--color-accent-orange);"><i class="fa-solid fa-business-time"></i></div>
+                </div>
+                <div class="stat-card">
+                    <div>
+                        <div class="stat-label">Next Tour Starts</div>
+                        <h3 class="stat-value">In 3 Days</h3>
+                    </div>
+                    <div class="stat-icon-wrapper" style="background: rgba(59, 130, 246, 0.1); color: #3b82f6;"><i class="fa-solid fa-hourglass-half"></i></div>
+                </div>
+                <div class="stat-card">
+                    <div>
+                        <div class="stat-label">Active Co-Guides</div>
+                        <h3 class="stat-value">6 Partners</h3>
+                    </div>
+                    <div class="stat-icon-wrapper" style="background: rgba(168, 85, 247, 0.1); color: #a855f7;"><i class="fa-solid fa-user-shield"></i></div>
+                </div>
+            </div>
+
+            <!-- Main Layout Grid -->
+            <div class="db-grid">
+                <div class="grid-left">
+                    <!-- Schedule Table -->
+                    <div class="panel-box">
+                        <div class="panel-box-header" style="border-bottom: 1px solid var(--color-border-glass); padding-bottom: 1rem; margin-bottom: 1.5rem;">
+                            <h3 class="panel-box-title" style="font-size: 1.15rem; font-weight: 700; color: var(--color-text-white);">Upcoming Tour Schedule</h3>
+                        </div>
+                        <table class="db-table" style="width: 100%; border-collapse: collapse; text-align: left;">
+                            <thead>
+                                <tr>
+                                    <th>Expedition / Sector</th>
+                                    <th>Climbers Count</th>
+                                    <th>Start Date</th>
+                                    <th>End Date</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="text-light-value" data-label="Trek" style="color: var(--color-text-white); font-weight: 600;">Serengeti Wildlife Safari</td>
+                                    <td data-label="Climbers">8 Hikers</td>
+                                    <td data-label="Start">Aug 03, 2026</td>
+                                    <td data-label="End">Aug 10, 2026</td>
+                                    <td data-label="Status"><span class="badge-status" style="background-color: rgba(34, 197, 94, 0.15); color: var(--color-accent-green); border: 1px solid rgba(34, 197, 94, 0.2); padding: 0.25rem 0.75rem; border-radius: var(--border-radius-sm); font-size: 0.75rem; font-weight: 700; text-transform: uppercase;">Confirmed</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-light-value" data-label="Trek" style="color: var(--color-text-white); font-weight: 600;">Patagonian Ice ridge Ascent</td>
+                                    <td data-label="Climbers">4 Climbers</td>
+                                    <td data-label="Start">Aug 18, 2026</td>
+                                    <td data-label="End">Aug 25, 2026</td>
+                                    <td data-label="Status"><span class="badge-status" style="background-color: rgba(34, 197, 94, 0.15); color: var(--color-accent-green); border: 1px solid rgba(34, 197, 94, 0.2); padding: 0.25rem 0.75rem; border-radius: var(--border-radius-sm); font-size: 0.75rem; font-weight: 700; text-transform: uppercase;">Confirmed</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-light-value" data-label="Trek" style="color: var(--color-text-white); font-weight: 600;">Alps High Peak Climb</td>
+                                    <td data-label="Climbers">3 Climbers</td>
+                                    <td data-label="Start">Sep 05, 2026</td>
+                                    <td data-label="End">Sep 12, 2026</td>
+                                    <td data-label="Status"><span class="badge-status" style="background-color: rgba(245, 158, 11, 0.15); color: var(--color-accent-orange); border: 1px solid rgba(245, 158, 11, 0.2); padding: 0.25rem 0.75rem; border-radius: var(--border-radius-sm); font-size: 0.75rem; font-weight: 700; text-transform: uppercase;">Pending Weather</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Assign Co-Guide Form -->
+                    <div class="panel-box" style="margin-top: 1.8rem;">
+                        <h3 class="panel-box-title" style="font-size: 1.15rem; font-weight: 700; color: var(--color-text-white); margin-bottom: 1.5rem; border-bottom: 1px solid var(--color-border-glass); padding-bottom: 0.5rem;">Assign Backup Co-Guide</h3>
+                        <form id="assign-guide-form" onsubmit="event.preventDefault(); window.showCustomAlert('Backup Guide partner assigned to the Patagonia Ice Ridge tour.', 'success'); this.reset();">
+                            <div class="form-grid-2col">
+                                <div class="form-group" style="margin-bottom: 1rem;">
+                                    <label for="s-trek">Select Expedition Tour</label>
+                                    <select id="s-trek" class="form-control" style="background: rgba(255,255,255,0.02); border: 1px solid var(--color-border-glass);">
+                                        <option value="Serengeti" style="background:#0b1528;">Serengeti Wildlife Safari</option>
+                                        <option value="Patagonia" style="background:#0b1528;">Patagonian Ice Ridge Ascent</option>
+                                        <option value="Alps" style="background:#0b1528;">Alps High Peak Climb</option>
+                                    </select>
+                                </div>
+                                <div class="form-group" style="margin-bottom: 1rem;">
+                                    <label for="s-guide">Select Backup Guide</label>
+                                    <select id="s-guide" class="form-control" style="background: rgba(255,255,255,0.02); border: 1px solid var(--color-border-glass);">
+                                        <option value="Elena" style="background:#0b1528;">Elena Rostova (Marine Leader)</option>
+                                        <option value="Jean" style="background:#0b1528;">Jean-Pierre Dubois (Alpine Specialist)</option>
+                                        <option value="Sarah" style="background:#0b1528;">Sarah Jenkins (Medical Officer)</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary" style="background: #b58a63 !important; color: #000; font-weight: 700; border: none; padding: 0.75rem 1.5rem; margin-top: 0.5rem; cursor: pointer;">Assign Team Member</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="grid-right">
+                    <!-- Weather alerts -->
+                    <div class="panel-box">
+                        <h3 class="panel-box-title" style="font-size: 1.15rem; font-weight: 700; color: var(--color-text-white); margin-bottom: 1.5rem;">Alpine Weather Advisory</h3>
+                        <div style="background: rgba(245,158,11,0.08); border: 1px solid rgba(245,158,11,0.2); padding: 1rem; border-radius: var(--border-radius-sm); margin-bottom: 1rem;">
+                            <span style="color: var(--color-accent-orange); font-weight: 700; font-size: 0.85rem; display: block; margin-bottom: 0.25rem;"><i class="fa-solid fa-cloud-bolt"></i> High Winds: Patagonia Sector</span>
+                            <span style="color: var(--color-text-muted); font-size: 0.8rem; line-height: 1.4;">Winds approaching 65 knots at the ridge. Base camp activities clear, high-altitude ascent delayed 24 hours.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script>
+        
+        // Guide role authorization gate
+        const userRole = localStorage.getItem('loggedInUserRole') || 'client';
+        if (userRole !== 'advisor') {
+            window.location.href = 'studio-portal.html';
+        }
+        
+        
+        // No preloader active
+    </script>
+</body>
+</html>

@@ -1078,6 +1078,15 @@ body.menu-open, html.menu-open {
     gap: 50px;
   }
   
+  .about-grid-equal {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+  
+  .about-img-wrap-equal {
+    min-height: 350px !important;
+  }
+  
   .about-img-wrap {
     max-width: 500px;
     margin: 0 auto;
@@ -2763,218 +2772,11 @@ body.light .sidebar-link:hover, body.light .sidebar-link.active {
     50% { transform: scale(1.15); opacity: 1; }
 }
 
-.preloader-percentage {
-    font-family: var(--font-heading);
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: var(--color-accent-orange);
-    margin-top: 0.5rem;
-}
+
 
 /* ==========================================================================
    SCROLL PROGRESS BAR & CUSTOM CURSOR
    ========================================================================== */
-.scroll-progress-container {
-    position: fixed;
-    padding: 0.6rem 1.3rem;
-    font-size: 0.85rem;
-    font-weight: 600;
-    border-radius: var(--border-radius-sm);
-    background: var(--color-primary-light);
-    color: var(--color-text-white);
-    border: 1px solid var(--color-border-glass);
-    transition: all var(--transition-fast);
-    text-decoration: none;
-    cursor: pointer;
-}
-
-.back-to-home-btn i {
-    font-size: 0.85rem;
-}
-
-.back-to-home-btn:hover {
-    background: rgba(255, 255, 255, 0.1);
-    border-color: var(--color-accent-green);
-    color: var(--color-accent-green);
-}
-
-.login-remember-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 1.75rem;
-    font-size: 0.85rem;
-    gap: 0.5rem;
-    width: 100%;
-    white-space: nowrap;
-}
-
-.remember-label {
-    display: flex;
-    align-items: center;
-    gap: 0.4rem;
-    color: var(--color-text-muted);
-    cursor: pointer;
-    text-transform: none;
-    font-weight: 500;
-}
-
-.remember-label input {
-    width: auto;
-    margin: 0;
-}
-
-.forgot-link {
-    color: var(--color-accent-orange);
-    font-weight: 600;
-    text-decoration: none;
-}
-
-@media (max-width: 768px) {
-    .glass-card {
-        padding: 1.75rem 1.25rem !important; /* Reduces padding to prevent layout overflow and cutoffs */
-    }
-    
-    .login-remember-row {
-        font-size: 0.78rem !important;
-        gap: 0.25rem !important;
-    }
-    
-    .back-to-home-btn {
-        position: relative !important;
-        top: 0 !important;
-        left: 0 !important;
-        margin: 0 auto 1.5rem auto !important;
-        display: inline-flex !important;
-        text-align: center;
-        justify-content: center;
-    }
-}
-
-
-/* ==========================================================================
-   FORM GRID 2-COLUMN LAYOUT RULES
-   ========================================================================== */
-.form-grid-2col {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-}
-
-@media (max-width: 768px) {
-    .form-grid-2col {
-        grid-template-columns: 1fr !important;
-        gap: 0 !important;
-    }
-}
-
-
-/* Block: Lines 2187-2222 */
-/* Dashboard Grid Layout (2-Column Desktop, 1-Column Collapse) */
-.db-grid {
-    display: grid;
-    grid-template-columns: 2.1fr 0.9fr;
-    gap: 2rem;
-    align-items: start;
-}
-
-@media (max-width: 1024px) {
-    .db-grid {
-        grid-template-columns: 1fr !important;
-        gap: 1.5rem !important;
-    }
-}
-
-/* Sidebar Sign Out button positioning - Pins it to the bottom of the sidebar */
-.signout-btn {
-    margin-top: auto !important;
-    display: flex !important;
-    align-items: center;
-    gap: 0.75rem;
-    padding: 0.8rem 1.2rem;
-    color: var(--color-text-muted) !important;
-    font-size: 0.9rem;
-    text-decoration: none;
-    border: 1px solid transparent;
-    border-radius: var(--border-radius-sm);
-    transition: all var(--transition-fast);
-}
-
-.signout-btn:hover {
-    color: #ef4444 !important;
-    background: rgba(239, 68, 68, 0.08) !important;
-    border-color: rgba(239, 68, 68, 0.15) !important;
-}
-
-
-/* ==========================================================================
-   PRELOADER ANIMATION AND DESIGN
-   ========================================================================== */
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    z-index: 99999;
-    transition: opacity 0.5s ease, visibility 0.5s ease;
-}
-
-.preloader.fade-out {
-    opacity: 0;
-    visibility: hidden;
-}
-
-.preloader-circle-wrap {
-    position: relative;
-    width: 90px;
-    height: 90px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 1.5rem;
-}
-
-.preloader-circle {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border: 3px solid var(--color-border-glass);
-    border-top-color: var(--color-accent-green);
-    border-right-color: var(--color-accent-orange);
-    border-radius: 50%;
-    animation: spin 1s infinite linear;
-}
-
-@keyframes spin {
-    to { transform: rotate(360deg); }
-}
-
-.preloader-icon {
-    font-size: 2.2rem;
-    color: var(--color-accent-green);
-    animation: pulse 1.2s infinite ease-in-out;
-}
-
-@keyframes pulse {
-    0%, 100% { transform: scale(0.9); opacity: 0.8; }
-    50% { transform: scale(1.15); opacity: 1; }
-}
-
-.preloader-percentage {
-    font-family: var(--font-heading);
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: var(--color-accent-orange);
-    margin-top: 0.5rem;
-}
-
-/* ==========================================================================
-   SCROLL PROGRESS BAR & CUSTOM CURSOR
-   ========================================================================== */
-.scroll-progress-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-
 
 /* Logo Image Styling */
 .logo-img {
@@ -2983,4 +2785,106 @@ body.light .sidebar-link:hover, body.light .sidebar-link.active {
   max-height: 40px;
   object-fit: contain;
   background: transparent !important;
+}
+
+/* Custom Alert overlay */
+.custom-alert-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(4, 9, 20, 0.75);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99999;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.custom-alert-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Custom Alert Modal Card */
+.custom-alert-overlay .custom-alert-modal {
+  width: 100%;
+  max-width: 400px;
+  padding: 2.5rem 2rem;
+  border-radius: var(--border-radius-md);
+  background: rgba(13, 27, 56, 0.9);
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  text-align: center;
+  transform: scale(0.85);
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.custom-alert-overlay.active .custom-alert-modal {
+  transform: scale(1);
+}
+
+.custom-alert-message {
+  font-family: var(--font-primary);
+  font-size: 0.95rem;
+  color: var(--color-text-white);
+  margin-bottom: 1.5rem;
+}
+
+.custom-alert-btn {
+  background: #b58a63 !important;
+  color: #000 !important;
+  border: none !important;
+  font-weight: 700;
+  padding: 0.75rem 2rem;
+  border-radius: var(--border-radius-sm);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.custom-alert-btn:hover {
+  background: #cba27a !important;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(181, 138, 99, 0.4);
+}
+
+/* Journey/How It Works Section Styles */
+.journey-grid .glass-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(139, 92, 246, 0.45) !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5) !important;
+}
+
+@media (max-width: 992px) {
+  .journey-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+}
+
+/* CTA Section Styles & Responsive Overrides */
+.cta-card {
+  padding: 4rem 3rem;
+}
+
+@media (max-width: 768px) {
+  #cta-booking {
+    padding: 3rem 0 !important;
+  }
+  .cta-card {
+    padding: 2.5rem 1.5rem !important;
+    margin: 0 1rem !important;
+  }
+  .cta-title {
+    font-size: 1.8rem !important;
+  }
+  .cta-desc {
+    font-size: 0.95rem !important;
+    margin: 1rem 0 1.75rem 0 !important;
+  }
 }

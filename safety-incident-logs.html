@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Safety operations, emergency rescue transceivers check-in, and incident reports logs.">
+    <title>Safety & Incident Logs | Adventures</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body style="overflow-y: auto; background-color: var(--color-primary);">
+
+
+
+    <!-- MOBILE TOGGLE HEADER -->
+    <div class="db-mobile-header" style="display: none;">
+        <button class="db-hamburger" aria-label="Toggle Menu"><i class="fa-solid fa-bars"></i></button>
+        <a href="studio-portal.html" class="db-mobile-logo">
+            <div class="logo" style="pointer-events: none;"><img src="images/logo.webp" alt="Logo" class="logo-img"></div>
+        </a>
+        <div class="db-mobile-avatar user-avatar" style="width: 32px; height: 32px; border-radius: 50%; background: var(--color-accent-green); color: var(--color-primary); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.85rem;">EX</div>
+    </div>
+    
+    <!-- Sidebar Overlay -->
+    <div class="db-sidebar-overlay"></div>
+
+    <div class="db-container" style="display: flex; min-height: 100vh;">
+        <!-- COLLAPSIBLE SIDEBAR -->
+        <aside class="db-sidebar">
+            <button class="db-sidebar-close" aria-label="Close Menu" style="display: none;"><i class="fa-solid fa-xmark"></i></button>
+            <div style="overflow-y: auto; height: calc(100% - 60px); padding-right: 5px;">
+                <a href="studio-portal.html" class="sidebar-logo" style="text-decoration: none;">
+                    <div class="logo" style="margin: 0 auto 1.5rem auto; justify-content: center;"><img src="images/logo.webp" alt="Logo" class="logo-img"></div>
+                </a>
+                
+                <!-- Group 1: Main -->
+                <div class="sidebar-section-title" style="margin-top: 1rem;">Main</div>
+                <nav class="sidebar-menu">
+                    <a href="studio-portal.html" class="sidebar-link "><i class="fa-solid fa-chart-pie"></i> Control Board</a>
+                    <a href="destinations.html" class="sidebar-link"><i class="fa-solid fa-map-location-dot"></i> Browse Destinations</a>
+                    <a href="packages.html" class="sidebar-link"><i class="fa-solid fa-suitcase"></i> Expedition Packages</a>
+                </nav>
+
+                <!-- Group 2: Climbing Milestones -->
+                <div class="sidebar-section-title" style="margin-top: 1rem;">Wilderness Logs</div>
+                <nav class="sidebar-menu">
+                    <a href="permits-visas.html" class="sidebar-link "><i class="fa-solid fa-id-card"></i> Permits & Visas</a>
+                    <a href="gear-checklists.html" class="sidebar-link "><i class="fa-solid fa-list-check"></i> Gear Checklists</a>
+                </nav>
+
+                <!-- Group 3: Training Analytics -->
+                <div class="sidebar-section-title" style="margin-top: 1rem;">Health & Prep</div>
+                <nav class="sidebar-menu">
+                    <a href="cardio-tracker.html" class="sidebar-link "><i class="fa-solid fa-heart-pulse"></i> Cardio Tracker</a>
+                    <a href="sat-communication.html" class="sidebar-link "><i class="fa-solid fa-satellite-dish"></i> SAT Communication</a>
+                </nav>
+            </div>
+            
+            <a href="login.html" class="signout-btn" id="dashboard-logout-btn" onclick="localStorage.clear();"><i class="fa-solid fa-right-from-bracket"></i> Sign Out</a>
+        </aside>
+
+        <!-- MAIN PANEL -->
+        <main class="db-main">
+            <!-- Welcome Hero -->
+            <div class="db-welcome-hero" style="border-radius: var(--border-radius-md); padding: 2rem 2.5rem; margin-bottom: 2rem;">
+                <h1>Safety Operations Command</h1>
+                <p>Register climber emergency transceivers check-ins, log wilderness safety incidents, and verify weather dispatches.</p>
+            </div>
+
+            <!-- Stats Row -->
+            <div class="db-stats-row">
+                <div class="stat-card">
+                    <div>
+                        <div class="stat-label">Agency Safety Rating</div>
+                        <h3 class="stat-value" style="color: var(--color-accent-green);">99.8% Perfect</h3>
+                    </div>
+                    <div class="stat-icon-wrapper" style="background: rgba(16, 185, 129, 0.1); color: var(--color-accent-green);"><i class="fa-solid fa-shield-halved"></i></div>
+                </div>
+                <div class="stat-card">
+                    <div>
+                        <div class="stat-label">Active Evacuation Alerts</div>
+                        <h3 class="stat-value" style="color: var(--color-accent-orange);" id="active-evacs">0 Alerts</h3>
+                    </div>
+                    <div class="stat-icon-wrapper" style="background: rgba(255, 122, 0, 0.1); color: var(--color-accent-orange);"><i class="fa-solid fa-triangle-exclamation"></i></div>
+                </div>
+                <div class="stat-card">
+                    <div>
+                        <div class="stat-label">Resolved Safety Incidents</div>
+                        <h3 class="stat-value">142 Cases</h3>
+                    </div>
+                    <div class="stat-icon-wrapper" style="background: rgba(59, 130, 246, 0.1); color: #3b82f6;"><i class="fa-solid fa-check-double"></i></div>
+                </div>
+                <div class="stat-card">
+                    <div>
+                        <div class="stat-label">Pending Evacuation Audits</div>
+                        <h3 class="stat-value">0 Audits</h3>
+                    </div>
+                    <div class="stat-icon-wrapper" style="background: rgba(168, 85, 247, 0.1); color: #a855f7;"><i class="fa-solid fa-folder-open"></i></div>
+                </div>
+            </div>
+
+            <!-- Main Layout Grid -->
+            <div class="db-grid">
+                <div class="grid-left">
+                    <!-- Incident Logs Table -->
+                    <div class="panel-box">
+                        <div class="panel-box-header" style="border-bottom: 1px solid var(--color-border-glass); padding-bottom: 1rem; margin-bottom: 1.5rem;">
+                            <h3 class="panel-box-title" style="font-size: 1.15rem; font-weight: 700; color: var(--color-text-white);">Operations Incident Log</h3>
+                        </div>
+                        <table class="db-table" id="incident-table" style="width: 100%; border-collapse: collapse; text-align: left;">
+                            <thead>
+                                <tr>
+                                    <th>Sector Location</th>
+                                    <th>Incident Category</th>
+                                    <th>Logged Date</th>
+                                    <th>Lead Handler Guide</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="text-light-value" data-label="Location" style="color: var(--color-text-white); font-weight: 600;">Swiss Alps East Ridge</td>
+                                    <td data-label="Category">High altitude transceiver diagnostics check</td>
+                                    <td data-label="Date">Jul 30, 2026</td>
+                                    <td data-label="Guide">Jean-Pierre Dubois</td>
+                                    <td data-label="Status"><span class="badge-status" style="background-color: rgba(34, 197, 94, 0.15); color: var(--color-accent-green); border: 1px solid rgba(34, 197, 94, 0.2); padding: 0.25rem 0.75rem; border-radius: var(--border-radius-sm); font-size: 0.75rem; font-weight: 700; text-transform: uppercase;">Resolved</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-light-value" data-label="Location" style="color: var(--color-text-white); font-weight: 600;">Serengeti National Outpost</td>
+                                    <td data-label="Category">High-heat dehydrated hydration check</td>
+                                    <td data-label="Date">Jul 28, 2026</td>
+                                    <td data-label="Guide">Elena Rostova</td>
+                                    <td data-label="Status"><span class="badge-status" style="background-color: rgba(34, 197, 94, 0.15); color: var(--color-accent-green); border: 1px solid rgba(34, 197, 94, 0.2); padding: 0.25rem 0.75rem; border-radius: var(--border-radius-sm); font-size: 0.75rem; font-weight: 700; text-transform: uppercase;">Resolved</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Create Safety Report Form -->
+                    <div class="panel-box" style="margin-top: 1.8rem;">
+                        <h3 class="panel-box-title" style="font-size: 1.15rem; font-weight: 700; color: var(--color-text-white); margin-bottom: 1.5rem; border-bottom: 1px solid var(--color-border-glass); padding-bottom: 0.5rem;">File Operations Security Incident Report</h3>
+                        <form id="incident-form">
+                            <div class="form-grid-2col">
+                                <div class="form-group" style="margin-bottom: 1rem;">
+                                    <label for="i-loc">Sector Location</label>
+                                    <input type="text" id="i-loc" class="form-control" placeholder="e.g. Patagonia Ridge Base Camp" required style="background: rgba(255,255,255,0.02); border: 1px solid var(--color-border-glass);">
+                                </div>
+                                <div class="form-group" style="margin-bottom: 1rem;">
+                                    <label for="i-cat">Severity Class</label>
+                                    <select id="i-cat" class="form-control" style="background: rgba(255,255,255,0.02); border: 1px solid var(--color-border-glass);">
+                                        <option value="Low Alert" style="background:#0b1528;">Routine Diagnostic Check</option>
+                                        <option value="Moderate Warning" style="background:#0b1528;">Minor Equipment Glitch / Dehydration</option>
+                                        <option value="High Emergency" style="background:#0b1528;">Immediate Helicopter Evac Action Required</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group" style="margin-bottom: 1rem; width:100%;">
+                                <label for="i-desc">Incident Event Description</label>
+                                <textarea id="i-desc" class="form-control" rows="3" placeholder="Provide complete logs and actions taken..." required style="background: rgba(255,255,255,0.02); border: 1px solid var(--color-border-glass); padding:10px; color:#fff; width:100%; box-sizing:border-box;"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary" style="background: #b58a63 !important; color: #000; font-weight: 700; border: none; padding: 0.75rem 1.5rem; margin-top: 0.5rem; cursor: pointer;">Log Security Incident</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="grid-right">
+                    <!-- Med Evac protocols -->
+                    <div class="panel-box">
+                        <h3 class="panel-box-title" style="font-size: 1.15rem; font-weight: 700; color: var(--color-text-white); margin-bottom: 1.5rem;">Emergency Evac Dispatch Channels</h3>
+                        <div class="keyword-item" style="display: flex; justify-content: space-between; padding: 0.8rem 0; border-bottom: 1px solid rgba(255,255,255,0.02);">
+                            <span style="color: var(--color-text-white); font-weight: 500;">Helicopter Response Team 1</span>
+                            <span style="color: var(--color-accent-green); font-size: 0.85rem; font-weight: 700;">STANDBY CLEAR</span>
+                        </div>
+                        <div class="keyword-item" style="display: flex; justify-content: space-between; padding: 0.8rem 0; border-bottom: 1px solid rgba(255,255,255,0.02);">
+                            <span style="color: var(--color-text-white); font-weight: 500;">Alpine Medics Outpost Base</span>
+                            <span style="color: var(--color-accent-green); font-size: 0.85rem; font-weight: 700;">STANDBY CLEAR</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Guide role authorization gate
+        const userRole = localStorage.getItem('loggedInUserRole') || 'client';
+        if (userRole !== 'advisor') {
+            window.location.href = 'studio-portal.html';
+        }
+
+        // Custom incident submission logic
+        document.getElementById('incident-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const iLoc = document.getElementById('i-loc').value;
+            const iCat = document.getElementById('i-cat').value;
+            const iDesc = document.getElementById('i-desc').value;
+
+            const tbody = document.querySelector('#incident-table tbody');
+            const newRow = document.createElement('tr');
+            
+            const today = new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+            
+            let badgeBg = "rgba(34, 197, 94, 0.15)";
+            let badgeColor = "var(--color-accent-green)";
+            let badgeBorder = "rgba(34, 197, 94, 0.2)";
+            let statusText = "Resolved";
+            
+            if (iCat.includes('Warning')) {
+                badgeBg = "rgba(245, 158, 11, 0.15)";
+                badgeColor = "var(--color-accent-orange)";
+                badgeBorder = "rgba(245, 158, 11, 0.2)";
+                statusText = "Active Warning";
+            } else if (iCat.includes('Emergency')) {
+                badgeBg = "rgba(239, 68, 68, 0.15)";
+                badgeColor = "#ef4444";
+                badgeBorder = "rgba(239, 68, 68, 0.2)";
+                statusText = "HIGH ALERT";
+                document.getElementById('active-evacs').textContent = "1 High Alert";
+                document.getElementById('active-evacs').style.color = "#ef4444";
+            }
+
+            newRow.innerHTML = `
+                <td class="text-light-value" data-label="Location" style="color: var(--color-text-white); font-weight: 600;">${iLoc}</td>
+                <td data-label="Category">${iDesc.substring(0, 40)}...</td>
+            tbody.prepend(newRow);
+            window.showCustomAlert('Safety report logged successfully in Operations databases.', 'success');
+            this.reset();
+        });
+    </script>
+</body>
+</html>

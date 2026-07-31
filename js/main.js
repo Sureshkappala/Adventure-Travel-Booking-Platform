@@ -682,12 +682,16 @@ function initDashboardSidebar() {
       dbHamburger.addEventListener('click', () => {
           dbSidebar.classList.add('active');
           dbOverlay.classList.add('active');
+          document.body.classList.add('menu-open');
+          document.documentElement.classList.add('menu-open');
       });
   }
 
   const closeDbSidebar = () => {
       if (dbSidebar) dbSidebar.classList.remove('active');
       if (dbOverlay) dbOverlay.classList.remove('active');
+      document.body.classList.remove('menu-open');
+      document.documentElement.classList.remove('menu-open');
   };
 
   if (dbSidebarClose) {
@@ -719,6 +723,10 @@ function initDashboardRoles() {
           const menuContainer = sidebar.querySelector('div[style*="overflow-y"]');
           if (menuContainer) {
               const path = window.location.pathname.split('/').pop() || 'studio-portal.html';
+              const isControl = path.includes('studio-portal') || path === '';
+              const isClientExp = path.includes('client-expeditions');
+              const isSchedule = path.includes('guide-schedule');
+              const isLogs = path.includes('safety-incident-logs');
               
               menuContainer.innerHTML = `
                   <button class="db-sidebar-close" aria-label="Close Menu"><i class="fa-solid fa-xmark"></i></button>
@@ -728,18 +736,17 @@ function initDashboardRoles() {
                       <!-- Group 1: Guide Command -->
                       <div class="sidebar-section-title" style="margin-top: 1rem;">Main</div>
                       <nav class="sidebar-menu">
-                          <a href="studio-portal.html" class="sidebar-link ${path === 'studio-portal.html' ? 'active' : ''}"><i class="fa-solid fa-chart-pie"></i> Control Board</a>
-                          <a href="#" class="sidebar-link" onclick="window.showCustomAlert('Redirecting to Client Expeditions directory...', 'success')"><i class="fa-solid fa-users"></i> Client Expeditions</a>
-                          <a href="#" class="sidebar-link" onclick="window.showCustomAlert('Redirecting to Guide Schedule...', 'success')"><i class="fa-solid fa-calendar-check"></i> Guide Schedule</a>
+                          <a href="studio-portal.html" class="sidebar-link ${isControl ? 'active' : ''}"><i class="fa-solid fa-chart-pie"></i> Control Board</a>
+                          <a href="client-expeditions.html" class="sidebar-link ${isClientExp ? 'active' : ''}"><i class="fa-solid fa-users"></i> Client Expeditions</a>
+                          <a href="guide-schedule.html" class="sidebar-link ${isSchedule ? 'active' : ''}"><i class="fa-solid fa-calendar-check"></i> Guide Schedule</a>
                       </nav>
 
                       <!-- Group 2: Agency Oversight -->
                       <div class="sidebar-section-title" style="margin-top: 1rem;">Agency Oversight</div>
                       <nav class="sidebar-menu">
-                          <a href="#" class="sidebar-link" onclick="window.showCustomAlert('Redirecting to Incident logs...', 'success')"><i class="fa-solid fa-file-shield"></i> Safety & Incident Logs</a>
+                          <a href="safety-incident-logs.html" class="sidebar-link ${isLogs ? 'active' : ''}"><i class="fa-solid fa-file-shield"></i> Safety & Incident Logs</a>
                       </nav>
                   </div>
-                  <a href="login.html" class="signout-btn" id="dashboard-logout-btn" onclick="localStorage.clear();"><i class="fa-solid fa-right-from-bracket"></i> Sign Out</a>
               `;
               
               // Re-bind close action for advisor sidebar
@@ -749,6 +756,8 @@ function initDashboardRoles() {
                   sidebar.classList.remove('active');
                   const dbOverlay = document.querySelector('.db-sidebar-overlay');
                   if (dbOverlay) dbOverlay.classList.remove('active');
+                  document.body.classList.remove('menu-open');
+                  document.documentElement.classList.remove('menu-open');
                 });
               }
           }

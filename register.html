@@ -104,6 +104,7 @@
                                 <i class="fa-solid fa-eye" id="eye-pwd1"></i>
                             </button>
                         </div>
+                        <small style="display: block; margin-top: 0.4rem; color: var(--color-text-muted); font-size: 0.75rem; line-height: 1.3;">Must be at least 8 characters, mixing uppercase, lowercase, numbers, and symbols.</small>
                     </div>
                     <div class="form-group">
                         <label for="reg-pwd-confirm" style="display: block; margin-bottom: 0.5rem; font-size: 0.85rem; font-weight: 600; color: var(--color-text-white);">Confirm Password</label>
@@ -211,9 +212,9 @@
 
             localStorage.setItem('loggedInUserName', name.toUpperCase());
             localStorage.setItem('loggedInUserRole', role);
-            window.showCustomAlert('Climber Account Registered! Redirecting to Expedition Control...', 'success');
+            window.showCustomAlert('Account registered successfully! Redirecting to login page...', 'success');
             setTimeout(() => {
-                window.location.href = 'studio-portal.html';
+                window.location.href = 'login.html';
             }, 1800);
         });
     </script>

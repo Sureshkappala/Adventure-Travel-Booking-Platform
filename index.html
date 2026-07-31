@@ -39,9 +39,9 @@
 
         <ul class="nav-links">
           <li><a href="index.html" class="nav-home active">Home</a></li>
+          <li><a href="about.html" class="nav-about">About Us</a></li>
           <li><a href="destinations.html" class="nav-destinations">Destinations</a></li>
           <li><a href="packages.html" class="nav-packages">Packages</a></li>
-          <li><a href="about.html" class="nav-about">About Us</a></li>
           <li><a href="contact.html" class="nav-contact">Contact</a></li>
         </ul>
         
@@ -149,7 +149,7 @@
       <div class="destinations-grid">
         
         <!-- Destination Card 1 -->
-        <div class="dest-card zoom-in-element" onclick="location.href='contact.html?dest=Swiss Alps'">
+        <div class="dest-card zoom-in-element" onclick="location.href='404.html'">
           <img src="images/dest-1.webp" alt="Swiss Alps peak hiking" class="dest-img" loading="lazy">
           <div class="dest-overlay">
             <span class="dest-tag">Mountain</span>
@@ -162,7 +162,7 @@
         </div>
 
         <!-- Destination Card 2 -->
-        <div class="dest-card zoom-in-element" style="transition-delay: 0.1s;" onclick="location.href='contact.html?dest=Serengeti Safari'">
+        <div class="dest-card zoom-in-element" style="transition-delay: 0.1s;" onclick="location.href='404.html'">
           <img src="images/dest-2.webp" alt="Serengeti Savannah cheetah" class="dest-img" loading="lazy">
           <div class="dest-overlay">
             <span class="dest-tag">Safari</span>
@@ -175,7 +175,7 @@
         </div>
 
         <!-- Destination Card 3 -->
-        <div class="dest-card zoom-in-element" style="transition-delay: 0.2s;" onclick="location.href='contact.html?dest=Bali Explorer'">
+        <div class="dest-card zoom-in-element" style="transition-delay: 0.2s;" onclick="location.href='404.html'">
           <img src="images/dest-3.webp" alt="Bali ancient water temple temple" class="dest-img" loading="lazy">
           <div class="dest-overlay">
             <span class="dest-tag">Tropical</span>
@@ -190,7 +190,7 @@
       </div>
 
       <div style="text-align: center; margin-top: 50px;" class="fade-in-element">
-        <a href="destinations.html" class="btn btn-primary">
+        <a href="404.html" class="btn btn-primary">
           View All Destinations <i class="fa-solid fa-arrow-right"></i>
         </a>
       </div>
@@ -231,7 +231,7 @@
             </div>
             <div class="pkg-footer">
               <div class="pkg-price">$1,899 <span>/ person</span></div>
-              <a href="contact.html?dest=Alpine Summit Ascent" class="btn btn-green">Explore</a>
+              <a href="404.html" class="btn btn-green">Explore</a>
             </div>
           </div>
         </div>
@@ -258,7 +258,7 @@
             </div>
             <div class="pkg-footer">
               <div class="pkg-price">$2,450 <span>/ person</span></div>
-              <a href="contact.html?dest=Wild Serengeti Safari" class="btn btn-green">Explore</a>
+              <a href="404.html" class="btn btn-green">Explore</a>
             </div>
           </div>
         </div>
@@ -285,7 +285,7 @@
             </div>
             <div class="pkg-footer">
               <div class="pkg-price">$1,299 <span>/ person</span></div>
-              <a href="contact.html?dest=Bali Heritage Trek" class="btn btn-green">Explore</a>
+              <a href="404.html" class="btn btn-green">Explore</a>
             </div>
           </div>
         </div>
@@ -293,7 +293,7 @@
       </div>
 
       <div style="text-align: center; margin-top: 50px;" class="fade-in-element">
-        <a href="packages.html" class="btn btn-primary">
+        <a href="404.html" class="btn btn-primary">
           View All Packages <i class="fa-solid fa-arrow-right"></i>
         </a>
       </div>
@@ -303,34 +303,45 @@
   <!-- ==========================================================================
        About Us Section Teaser
        ========================================================================== -->
-  <section class="section section-light" id="about">
+  <section class="section" id="about" style="padding: 5rem 0; background: var(--color-primary-dark);">
     <div class="container">
-      <div class="about-grid">
+      <div class="about-grid-equal" style="display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 3rem; align-items: stretch; min-height: 480px;">
         
-        <div class="about-content slide-left-element">
-          <span class="section-subtitle">Our Heritage</span>
-          <h2 class="section-title">Pioneering Guided Expeditions Since 2012</h2>
-          <p class="about-desc">We began as a group of mountaineers and wilderness photographers seeking to bridge the gap between technical expeditions and travel enthusiasts. Over the past decade, we have designed thousands of custom paths, prioritizing environment protection and genuine culture exchange.</p>
+        <!-- Left Side: Content Card -->
+        <div class="glass-card" style="display: flex; flex-direction: column; justify-content: center; padding: 3rem; border-radius: var(--border-radius-md); border: 1px solid rgba(139, 92, 246, 0.25); background: rgba(13, 27, 56, 0.7); box-shadow: 0 15px 35px rgba(0,0,0,0.4); box-sizing: border-box;">
+          <span class="section-subtitle" style="color: var(--color-accent-orange); font-size: 0.9rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 0.75rem; display: block;">Wilderness Pioneers</span>
+          <h2 class="section-title" style="font-size: 2.2rem; line-height: 1.2; margin-bottom: 1.25rem; font-weight: 800; font-family: var(--font-heading); color: var(--color-text-white);">Uncompromised Safety & Technical Leadership</h2>
+          <p style="color: var(--color-text-muted); font-size: 1rem; line-height: 1.6; margin-bottom: 2rem;">We started as a group of professional mountaineers seeking to bridge the gap between extreme alpine objectives and safety-first travel planning. Over the past decade, we have successfully managed thousands of wilderness climbs with zero safety incidents, using certified guide teams and satellite check-ins.</p>
           
-          <ul class="about-features">
-            <li><i class="fa-solid fa-circle-check"></i> certified wilderness responders</li>
-            <li><i class="fa-solid fa-circle-check"></i> fully carbon-offset trips</li>
-            <li><i class="fa-solid fa-circle-check"></i> bespoke customized itineraries</li>
-          </ul>
-
-          <div style="margin-top: 30px;">
-            <a href="about.html" class="btn btn-primary">
-              Read Our Full Story <i class="fa-solid fa-arrow-right"></i>
-            </a>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 2.5rem;">
+            <div style="display: flex; align-items: center; gap: 0.75rem;">
+              <i class="fa-solid fa-shield-halved" style="color: var(--color-accent-green); font-size: 1.2rem;"></i>
+              <span style="color: var(--color-text-white); font-weight: 600; font-size: 0.9rem;">Certified Guide Team</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 0.75rem;">
+              <i class="fa-solid fa-satellite" style="color: var(--color-accent-green); font-size: 1.2rem;"></i>
+              <span style="color: var(--color-text-white); font-weight: 600; font-size: 0.9rem;">24/7 Telemetry Logs</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 0.75rem;">
+              <i class="fa-solid fa-mountain-sun" style="color: var(--color-accent-green); font-size: 1.2rem;"></i>
+              <span style="color: var(--color-text-white); font-weight: 600; font-size: 0.9rem;">Custom Sector Clearances</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 0.75rem;">
+              <i class="fa-solid fa-leaf" style="color: var(--color-accent-green); font-size: 1.2rem;"></i>
+              <span style="color: var(--color-text-white); font-weight: 600; font-size: 0.9rem;">100% Eco-offset Trips</span>
+            </div>
+          </div>
+          
+          <div>
+            <a href="404.html" class="btn btn-primary" style="padding: 0.85rem 2rem; font-weight: 700;">Explore Our Story <i class="fa-solid fa-arrow-right" style="margin-left: 0.5rem;"></i></a>
           </div>
         </div>
-
-        <div class="about-img-wrap slide-right-element">
-          <div class="about-img-frame">
-            <img src="images/about.webp" alt="Explorer looking out over valley" class="about-img" loading="lazy">
-          </div>
+        
+        <!-- Right Side: Image Box -->
+        <div class="about-img-wrap-equal" style="position: relative; overflow: hidden; border-radius: var(--border-radius-md); border: 1px solid rgba(139, 92, 246, 0.25); box-shadow: 0 15px 35px rgba(0,0,0,0.4);">
+          <img src="images/about.webp" alt="Pioneering Guided Expeditions" style="width: 100%; height: 100%; object-fit: cover; display: block; position: absolute; top: 0; left: 0;">
         </div>
-
+        
       </div>
     </div>
   </section>
@@ -390,71 +401,50 @@
   <!-- ==========================================================================
        Gallery Section
        ========================================================================== -->
-  <section class="section section-light" id="gallery">
-    <div class="container">
-      <div class="section-title-wrap fade-in-element">
-        <span class="section-subtitle">Visual Logs</span>
-        <h2 class="section-title">Snapshots from the Wild</h2>
-      </div>
+  <!-- ==========================================================================
+       Journey / How It Works Section
+       ========================================================================== -->
+  <section class="section" id="journey" style="padding: 6rem 0; background: var(--color-primary-dark);">
+     <div class="container">
+       <div class="section-title-wrap fade-in-element" style="text-align: center; margin-bottom: 4rem;">
+         <span class="section-subtitle" style="color: var(--color-accent-orange); font-size: 0.9rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px;">Three-Step Ascent</span>
+         <h2 class="section-title" style="font-size: 2.5rem; margin-top: 0.5rem; color: var(--color-text-white); font-weight: 800; font-family: var(--font-heading);">Your Journey to the Summit</h2>
+       </div>
 
-      <div class="gallery-grid">
-        
-        <!-- Gallery 1 -->
-        <div class="gallery-item zoom-in-element" onclick="location.href='destinations.html'">
-          <img src="images/gallery-1.webp" alt="Kayaking in turquoise water" class="gallery-img" loading="lazy">
-          <div class="gallery-hover">
-            <img src="images/logo.webp" alt="Logo" class="logo-img">
-            <h4>Alpine Kayaking</h4>
-          </div>
-        </div>
+       <div class="journey-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5rem;">
+         
+         <!-- Step 1 -->
+         <div class="glass-card" style="display: flex; flex-direction: column; align-items: center; text-align: center; padding: 3rem 2rem; border-radius: var(--border-radius-md); border: 1px solid rgba(139, 92, 246, 0.2); background: rgba(13, 27, 56, 0.6); box-shadow: 0 15px 35px rgba(0,0,0,0.3); transition: all 0.3s ease; box-sizing: border-box; cursor: default;">
+           <div style="width: 80px; height: 80px; border-radius: 50%; background: rgba(181, 138, 99, 0.1); border: 1px solid var(--color-accent-orange); display: flex; align-items: center; justify-content: center; margin-bottom: 2rem; position: relative;">
+             <i class="fa-solid fa-map-location-dot" style="color: var(--color-accent-orange); font-size: 2rem;"></i>
+             <span style="position: absolute; top: -5px; right: -5px; background: var(--color-accent-orange); color: #000; font-weight: 800; font-size: 0.75rem; width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 2px solid #0d1b38;">01</span>
+           </div>
+           <h3 style="color: var(--color-text-white); font-size: 1.3rem; font-weight: 700; margin-bottom: 1rem; font-family: var(--font-heading);">1. Select Expedition</h3>
+           <p style="color: var(--color-text-muted); font-size: 0.95rem; line-height: 1.6; margin: 0;">Browse our curated destinations and select the alpine route or desert crossing that matches your experience level and goals.</p>
+         </div>
 
-        <!-- Gallery 2 -->
-        <div class="gallery-item zoom-in-element" style="transition-delay: 0.05s;" onclick="location.href='packages.html'">
-          <img src="images/gallery-2.webp" alt="Green Aurora above orange tent" class="gallery-img" loading="lazy">
-          <div class="gallery-hover">
-            <img src="images/logo.webp" alt="Logo" class="logo-img">
-            <h4>Northern Lights Camp</h4>
-          </div>
-        </div>
+         <!-- Step 2 -->
+         <div class="glass-card" style="display: flex; flex-direction: column; align-items: center; text-align: center; padding: 3rem 2rem; border-radius: var(--border-radius-md); border: 1px solid rgba(139, 92, 246, 0.2); background: rgba(13, 27, 56, 0.6); box-shadow: 0 15px 35px rgba(0,0,0,0.3); transition: all 0.3s ease; box-sizing: border-box; cursor: default;">
+           <div style="width: 80px; height: 80px; border-radius: 50%; background: rgba(16, 185, 129, 0.1); border: 1px solid var(--color-accent-green); display: flex; align-items: center; justify-content: center; margin-bottom: 2rem; position: relative;">
+             <i class="fa-solid fa-clipboard-list" style="color: var(--color-accent-green); font-size: 2rem;"></i>
+             <span style="position: absolute; top: -5px; right: -5px; background: var(--color-accent-green); color: #000; font-weight: 800; font-size: 0.75rem; width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 2px solid #0d1b38;">02</span>
+           </div>
+           <h3 style="color: var(--color-text-white); font-size: 1.3rem; font-weight: 700; margin-bottom: 1rem; font-family: var(--font-heading);">2. Prepare Logistics</h3>
+           <p style="color: var(--color-text-muted); font-size: 0.95rem; line-height: 1.6; margin: 0;">Consult our certified guides to organize gear checklists, secure travel permits, and file medical clearances inside the portal.</p>
+         </div>
 
-        <!-- Gallery 3 -->
-        <div class="gallery-item zoom-in-element" style="transition-delay: 0.1s;" onclick="location.href='destinations.html'">
-          <img src="images/gallery-3.webp" alt="Hikers scaling rocky ridge" class="gallery-img" loading="lazy">
-          <div class="gallery-hover">
-            <img src="images/logo.webp" alt="Logo" class="logo-img">
-            <h4>Canyon Ridge Hike</h4>
-          </div>
-        </div>
+         <!-- Step 3 -->
+         <div class="glass-card" style="display: flex; flex-direction: column; align-items: center; text-align: center; padding: 3rem 2rem; border-radius: var(--border-radius-md); border: 1px solid rgba(139, 92, 246, 0.2); background: rgba(13, 27, 56, 0.6); box-shadow: 0 15px 35px rgba(0,0,0,0.3); transition: all 0.3s ease; box-sizing: border-box; cursor: default;">
+           <div style="width: 80px; height: 80px; border-radius: 50%; background: rgba(139, 92, 246, 0.1); border: 1px solid #8b5cf6; display: flex; align-items: center; justify-content: center; margin-bottom: 2rem; position: relative;">
+             <i class="fa-solid fa-mountain" style="color: #8b5cf6; font-size: 2rem;"></i>
+             <span style="position: absolute; top: -5px; right: -5px; background: #8b5cf6; color: #fff; font-weight: 800; font-size: 0.75rem; width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 2px solid #0d1b38;">03</span>
+           </div>
+           <h3 style="color: var(--color-text-white); font-size: 1.3rem; font-weight: 700; margin-bottom: 1rem; font-family: var(--font-heading);">3. Scale Safely</h3>
+           <p style="color: var(--color-text-muted); font-size: 0.95rem; line-height: 1.6; margin: 0;">Log training metrics, connect to sat-telemetry systems, and cross boundaries under professional coordination.</p>
+         </div>
 
-        <!-- Gallery 4 -->
-        <div class="gallery-item zoom-in-element" style="transition-delay: 0.15s;" onclick="location.href='destinations.html'">
-          <img src="images/gallery-4.webp" alt="Balloons hovering over red dunes" class="gallery-img" loading="lazy">
-          <div class="gallery-hover">
-            <img src="images/logo.webp" alt="Logo" class="logo-img">
-            <h4>Sahara Ballooning</h4>
-          </div>
-        </div>
-
-        <!-- Gallery 5 -->
-        <div class="gallery-item zoom-in-element" style="transition-delay: 0.2s;" onclick="location.href='destinations.html'">
-          <img src="images/gallery-5.webp" alt="Diver swimming with sea turtle" class="gallery-img" loading="lazy">
-          <div class="gallery-hover">
-            <img src="images/logo.webp" alt="Logo" class="logo-img">
-            <h4>Reef Diving</h4>
-          </div>
-        </div>
-
-        <!-- Gallery 6 -->
-        <div class="gallery-item zoom-in-element" style="transition-delay: 0.25s;" onclick="location.href='packages.html'">
-          <img src="images/gallery-6.webp" alt="Climber scaling vertical rock cliff" class="gallery-img" loading="lazy">
-          <div class="gallery-hover">
-            <img src="images/logo.webp" alt="Logo" class="logo-img">
-            <h4>Rock Climbing</h4>
-          </div>
-        </div>
-
-      </div>
-    </div>
+       </div>
+     </div>
   </section>
 
   <!-- ==========================================================================
@@ -545,6 +535,24 @@
   </section>
 
   <!-- ==========================================================================
+       Call to Action (CTA) Section
+       ========================================================================== -->
+  <section class="section" id="cta-booking" style="padding: 6rem 0; background: linear-gradient(135deg, rgba(7, 13, 30, 0.95), rgba(13, 27, 56, 0.95)), url('images/hero-bg.webp') center/cover no-repeat; position: relative; border-top: 1px solid rgba(139, 92, 246, 0.2); border-bottom: 1px solid rgba(139, 92, 246, 0.2);">
+    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at center, rgba(139, 92, 246, 0.15) 0%, transparent 70%); pointer-events: none; z-index: 1;"></div>
+    <div class="container" style="position: relative; z-index: 2; text-align: center;">
+      <div class="glass-card cta-card" style="max-width: 800px; margin: 0 auto; padding: 4rem 3rem; border-radius: var(--border-radius-md); border: 1px solid rgba(139, 92, 246, 0.25); background: rgba(13, 27, 56, 0.75); box-shadow: 0 20px 50px rgba(0,0,0,0.5);">
+        <span class="section-subtitle" style="color: var(--color-accent-orange); font-size: 0.9rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px;">Embark On Your Quest</span>
+        <h2 class="cta-title" style="font-size: 2.8rem; margin-top: 0.75rem; color: var(--color-text-white); font-weight: 800; font-family: var(--font-heading); line-height: 1.2;">Ready to Begin Your Next Adventure?</h2>
+        <p class="cta-desc" style="color: var(--color-text-muted); font-size: 1.1rem; line-height: 1.6; margin: 1.5rem 0 2.5rem 0; max-width: 600px; margin-left: auto; margin-right: auto;">Create your explorer account today to track permits, log preparation checkpoints, monitor safety telemetry, and secure your slot on high-octane climbs.</p>
+        <div style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap;">
+          <a href="register.html" class="btn btn-primary" style="padding: 1rem 2.5rem; font-weight: 700; font-size: 1rem; border-radius: var(--border-radius-sm);">Start Planning Now <i class="fa-solid fa-arrow-right" style="margin-left: 0.5rem;"></i></a>
+          <a href="contact.html" class="btn btn-secondary" style="padding: 1rem 2.5rem; font-weight: 700; font-size: 1rem; border-radius: var(--border-radius-sm);">Speak With a Guide</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
        Footer Section
        ========================================================================== -->
   <footer class="footer">
@@ -582,8 +590,8 @@
           <h3>Support</h3>
           <ul class="footer-links">
             <li><a href="contact.html">Contact Coordinates</a></li>
-            <li><a href="#">Terms & Agreements</a></li>
-            <li><a href="#">Cancellation Policies</a></li>
+            <li><a href="404.html">Terms & Agreements</a></li>
+            <li><a href="404.html">Cancellation Policies</a></li>
           </ul>
         </div>
 

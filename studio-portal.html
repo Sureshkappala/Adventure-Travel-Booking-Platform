@@ -10,14 +10,7 @@
 </head>
 <body style="overflow-y: auto; background-color: var(--color-primary);">
 
-    <!-- PRELOADER -->
-    <div class="preloader">
-        <div class="preloader-circle-wrap">
-            <div class="preloader-circle"></div>
-            <i class="fa-solid fa-compass preloader-icon"></i>
-        </div>
-        <div class="preloader-percentage">0%</div>
-    </div>
+
 
     <!-- MOBILE TOGGLE HEADER -->
     <div class="db-mobile-header" style="display: none;">
@@ -44,22 +37,22 @@
                 <div class="sidebar-section-title" style="margin-top: 1rem;">Main</div>
                 <nav class="sidebar-menu">
                     <a href="studio-portal.html" class="sidebar-link active"><i class="fa-solid fa-chart-pie"></i> Control Board</a>
-                    <a href="destinations.html" class="sidebar-link"><i class="fa-solid fa-map-location-dot"></i> Browse Destinations</a>
-                    <a href="packages.html" class="sidebar-link"><i class="fa-solid fa-suitcase"></i> Expedition Packages</a>
+                    <a href="db-destinations.html" class="sidebar-link"><i class="fa-solid fa-map-location-dot"></i> Browse Destinations</a>
+                    <a href="db-packages.html" class="sidebar-link"><i class="fa-solid fa-suitcase"></i> Expedition Packages</a>
                 </nav>
 
                 <!-- Group 2: Climbing Milestones -->
                 <div class="sidebar-section-title" style="margin-top: 1rem;">Wilderness Logs</div>
                 <nav class="sidebar-menu">
-                    <a href="#" class="sidebar-link" onclick="window.showCustomAlert('Redirecting to Wilderness Permits drawer...', 'success')"><i class="fa-solid fa-id-card"></i> Permits & Visas</a>
-                    <a href="#" class="sidebar-link" onclick="window.showCustomAlert('Opening Gear checklist sheet...', 'success')"><i class="fa-solid fa-list-check"></i> Gear Checklists</a>
+                    <a href="permits-visas.html" class="sidebar-link"><i class="fa-solid fa-id-card"></i> Permits & Visas</a>
+                    <a href="gear-checklists.html" class="sidebar-link"><i class="fa-solid fa-list-check"></i> Gear Checklists</a>
                 </nav>
 
                 <!-- Group 3: Training Analytics -->
                 <div class="sidebar-section-title" style="margin-top: 1rem;">Health & Prep</div>
                 <nav class="sidebar-menu">
-                    <a href="#" class="sidebar-link" onclick="window.showCustomAlert('Opening cardio tracker logs...', 'success')"><i class="fa-solid fa-heart-pulse"></i> Cardio Tracker</a>
-                    <a href="#" class="sidebar-link" onclick="window.showCustomAlert('Redirecting to emergency satellite beacon configuration...', 'success')"><i class="fa-solid fa-satellite-dish"></i> SAT Communication</a>
+                    <a href="cardio-tracker.html" class="sidebar-link"><i class="fa-solid fa-heart-pulse"></i> Cardio Tracker</a>
+                    <a href="sat-communication.html" class="sidebar-link"><i class="fa-solid fa-satellite-dish"></i> SAT Communication</a>
                 </nav>
             </div>
             
@@ -220,11 +213,6 @@
 
     <script src="js/main.js"></script>
     <script>
-        // Custom preloader percentage simulation for dashboard
-        const preloader = document.querySelector('.preloader');
-        const percentage = document.querySelector('.preloader-percentage');
-        let count = 0;
-        const interval = setInterval(() => { count += 8; percentage.textContent = count + '%'; if (count >= 100) { clearInterval(interval); preloader.classList.add('fade-out'); } }, 15);
     </script>
 </body>
 </html>
