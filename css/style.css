@@ -1083,6 +1083,23 @@ body.menu-open, html.menu-open {
     gap: 2rem !important;
   }
   
+  .about-grid-equal .glass-card {
+    padding: 2rem 1.5rem !important;
+  }
+
+  .about-stats {
+    flex-wrap: wrap !important;
+    gap: 1.5rem 1rem !important;
+  }
+
+  .stat-item h3 {
+    font-size: 1.8rem !important;
+  }
+
+  .stat-item p {
+    font-size: 0.8rem !important;
+  }
+  
   .about-img-wrap-equal {
     min-height: 350px !important;
   }
