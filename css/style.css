@@ -1615,6 +1615,10 @@ body.menu-open, html.menu-open {
   margin-top: 10px;
 }
 
+.contact-form .btn:hover {
+  background: #e06d00 !important;
+}
+
 @media (max-width: 992px) {
   .contact-grid {
     grid-template-columns: 1fr !important;
@@ -1980,15 +1984,21 @@ body.menu-open, html.menu-open {
   padding: 0 24px;
 }
 
+.subpage-hero-content .section-subtitle {
+  animation: slideDown 1s ease-out both;
+}
+
 .subpage-hero-content h1 {
   font-size: 3rem;
   font-weight: 800;
   margin-bottom: 12px;
+  animation: fadeInUp 1s ease-out 0.2s both;
 }
 
 .subpage-hero-content p {
   color: var(--color-text-muted);
   font-size: 1.1rem;
+  animation: fadeInUp 1s ease-out 0.4s both;
 }
 
 /* ==========================================================================

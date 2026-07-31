@@ -521,21 +521,23 @@ function initFormValidations() {
       }
     });
 
-    termsInput.addEventListener('change', () => {
-      const errorEl = termsWrapper.nextElementSibling;
-      if (!termsInput.checked) {
-        termsWrapper.classList.add('is-invalid');
-        if (errorEl) {
-          errorEl.textContent = 'You must accept the Terms and Conditions.';
-          errorEl.style.display = 'block';
+    if (termsInput && termsWrapper) {
+      termsInput.addEventListener('change', () => {
+        const errorEl = termsWrapper.nextElementSibling;
+        if (!termsInput.checked) {
+          termsWrapper.classList.add('is-invalid');
+          if (errorEl) {
+            errorEl.textContent = 'You must accept the Terms and Conditions.';
+            errorEl.style.display = 'block';
+          }
+        } else {
+          termsWrapper.classList.remove('is-invalid');
+          if (errorEl) {
+            errorEl.style.display = 'none';
+          }
         }
-      } else {
-        termsWrapper.classList.remove('is-invalid');
-        if (errorEl) {
-          errorEl.style.display = 'none';
-        }
-      }
-    });
+      });
+    }
 
     // Form Submit Validation
     contactForm.addEventListener('submit', (e) => {
@@ -596,19 +598,21 @@ function initFormValidations() {
       }
 
       // Validate Terms Checkbox
-      if (!termsInput.checked) {
-        termsWrapper.classList.add('is-invalid');
-        const errorEl = termsWrapper.nextElementSibling;
-        if (errorEl) {
-          errorEl.textContent = 'You must accept the Terms and Conditions.';
-          errorEl.style.display = 'block';
-        }
-        isValid = false;
-      } else {
-        termsWrapper.classList.remove('is-invalid');
-        const errorEl = termsWrapper.nextElementSibling;
-        if (errorEl) {
-          errorEl.style.display = 'none';
+      if (termsInput && termsWrapper) {
+        if (!termsInput.checked) {
+          termsWrapper.classList.add('is-invalid');
+          const errorEl = termsWrapper.nextElementSibling;
+          if (errorEl) {
+            errorEl.textContent = 'You must accept the Terms and Conditions.';
+            errorEl.style.display = 'block';
+          }
+          isValid = false;
+        } else {
+          termsWrapper.classList.remove('is-invalid');
+          const errorEl = termsWrapper.nextElementSibling;
+          if (errorEl) {
+            errorEl.style.display = 'none';
+          }
         }
       }
 

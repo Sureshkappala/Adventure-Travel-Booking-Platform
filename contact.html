@@ -150,61 +150,60 @@
 
         <!-- Glassmorphic Card Form side -->
         <div class="contact-form-card glass-panel slide-right-element" style="background: #070d1e; color: var(--color-text-white); border: 1px solid var(--color-border-glass); border-top: 1px solid rgba(255, 255, 255, 0.18);">
-          <h3 class="contact-form-title">Trek Inquiry Form</h3>
-          <p class="contact-form-desc">Complete the fields below. Fields marked with an asterisk are mandatory.</p>
+          <h3 class="contact-form-title" style="font-size: 1.8rem; font-weight: 700; margin-bottom: 2rem; color: var(--color-text-white); font-family: var(--font-heading);">Leave a Message</h3>
           
           <form class="contact-form" id="contactInquiryForm" novalidate>
             
             <!-- Name -->
             <div class="form-group">
-              <label for="contactName">Full Name *</label>
-              <input type="text" id="contactName" class="form-control" placeholder="E.g. John Doe" required>
+              <label for="contactName" style="font-size: 0.8rem; font-weight: 700; text-transform: uppercase; color: var(--color-text-white); margin-bottom: 8px; display: block; letter-spacing: 0.05em;">FULL NAME</label>
+              <div class="input-icon-wrapper" style="position: relative;">
+                <i class="fa-solid fa-user" style="position: absolute; left: 1rem; top: 50%; transform: translateY(-50%); color: var(--color-text-muted);"></i>
+                <input type="text" id="contactName" class="form-control" placeholder="John Doe" required style="padding-left: 2.75rem;">
+              </div>
               <span class="error-msg">Name must contain letters and spaces only.</span>
             </div>
 
             <!-- Email -->
             <div class="form-group">
-              <label for="contactEmail">Email Address *</label>
-              <input type="email" id="contactEmail" class="form-control" placeholder="E.g. john@example.com" required>
+              <label for="contactEmail" style="font-size: 0.8rem; font-weight: 700; text-transform: uppercase; color: var(--color-text-white); margin-bottom: 8px; display: block; letter-spacing: 0.05em;">EMAIL ADDRESS</label>
+              <div class="input-icon-wrapper" style="position: relative;">
+                <i class="fa-solid fa-envelope" style="position: absolute; left: 1rem; top: 50%; transform: translateY(-50%); color: var(--color-text-muted);"></i>
+                <input type="email" id="contactEmail" class="form-control" placeholder="john@example.com" required style="padding-left: 2.75rem;">
+              </div>
               <span class="error-msg">Please enter a valid email.</span>
             </div>
 
             <!-- Mobile Number -->
             <div class="form-group">
-              <label for="contactPhone">Mobile Number *</label>
-              <input type="tel" id="contactPhone" class="form-control" placeholder="10 Digits Only" required>
+              <label for="contactPhone" style="font-size: 0.8rem; font-weight: 700; text-transform: uppercase; color: var(--color-text-white); margin-bottom: 8px; display: block; letter-spacing: 0.05em;">PHONE NUMBER</label>
+              <div class="input-icon-wrapper" style="position: relative;">
+                <i class="fa-solid fa-phone" style="position: absolute; left: 1rem; top: 50%; transform: translateY(-50%); color: var(--color-text-muted);"></i>
+                <input type="tel" id="contactPhone" class="form-control" placeholder="1234567890" required style="padding-left: 2.75rem;">
+              </div>
               <span class="error-msg">Must be exactly 10 digits.</span>
             </div>
 
             <!-- Target Destination -->
             <div class="form-group">
-              <label for="contactDest">Destination *</label>
-              <input type="text" id="contactDest" class="form-control" placeholder="E.g. Swiss Alps" required>
+              <label for="contactDest" style="font-size: 0.8rem; font-weight: 700; text-transform: uppercase; color: var(--color-text-white); margin-bottom: 8px; display: block; letter-spacing: 0.05em;">MESSAGE SUBJECT</label>
+              <div class="input-icon-wrapper" style="position: relative;">
+                <i class="fa-solid fa-circle-question" style="position: absolute; left: 1rem; top: 50%; transform: translateY(-50%); color: var(--color-text-muted);"></i>
+                <input type="text" id="contactDest" class="form-control" placeholder="Feedback / Audit Inquiry" required style="padding-left: 2.75rem;">
+              </div>
               <span class="error-msg">Destination is mandatory.</span>
             </div>
 
             <!-- Message with character validation -->
-            <div class="form-group full-width">
-              <label for="contactMessage">Inquiry details * (Min 20, Max 500 chars)</label>
-              <textarea id="contactMessage" class="form-control" placeholder="Tell us about your outdoor experience, gear requirements, or queries..." required></textarea>
+            <div class="form-group full-width" style="margin-bottom: 1.5rem;">
+              <label for="contactMessage" style="font-size: 0.8rem; font-weight: 700; text-transform: uppercase; color: var(--color-text-white); margin-bottom: 8px; display: block; letter-spacing: 0.05em;">MESSAGE DETAILS</label>
+              <textarea id="contactMessage" class="form-control" placeholder="Type your message here..." required></textarea>
               <span class="error-msg">Must be between 20 and 500 characters.</span>
             </div>
 
-            <!-- Terms and conditions checkbox -->
-            <div class="checkbox-group">
-              <label class="checkbox-label" for="contactTerms">
-                <input type="checkbox" id="contactTerms" required>
-                <div class="custom-checkbox">
-                  <i class="fa-solid fa-check"></i>
-                </div>
-                <span>I read and accept the adventure safety agreement terms *</span>
-              </label>
-              <span class="error-msg">You must accept the terms to proceed.</span>
-            </div>
-
             <!-- Submit Button -->
-            <button type="submit" class="btn btn-primary">
-              <i class="fa-solid fa-paper-plane"></i> Submit Reservation Request
+            <button type="submit" class="btn" style="width: 100%; padding: 1rem; font-weight: 700; background: #c25e00 !important; color: #fff !important; border: none; border-radius: var(--border-radius-sm); font-size: 1rem; display: flex; align-items: center; justify-content: center; gap: 0.6rem; cursor: pointer; transition: background 0.3s ease;">
+              Send Message <i class="fa-solid fa-paper-plane"></i>
             </button>
 
           </form>
