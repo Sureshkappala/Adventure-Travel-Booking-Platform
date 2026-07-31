@@ -2888,3 +2888,24 @@ body.light .sidebar-link:hover, body.light .sidebar-link.active {
     margin: 1rem 0 1.75rem 0 !important;
   }
 }
+
+/* Mobile Responsive Adjustments for New Sections */
+@media (max-width: 768px) {
+  #sustainability .about-grid-equal,
+  #whats-included .about-grid-equal,
+  #safety-insurance .about-grid-equal {
+    gap: 1.5rem !important;
+  }
+  #sustainability .glass-card,
+  #whats-included .glass-card,
+  #safety-insurance .glass-card {
+    padding: 2rem 1.5rem !important;
+  }
+  #sustainability h2,
+  #safety-insurance .section-title {
+    font-size: 1.8rem !important;
+  }
+  #faq-accordion .glass-card {
+    padding: 1.25rem 1rem !important;
+  }
+}
