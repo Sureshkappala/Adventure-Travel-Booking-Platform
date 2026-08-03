@@ -612,11 +612,11 @@ body.menu-open, html.menu-open {
   text-align: left;
   display: flex;
   flex-direction: column;
-  margin-bottom: 1.25rem;
+  margin-bottom: 0.75rem;
 }
 
 .form-grid-2col {
-  margin-bottom: 1.25rem;
+  margin-bottom: 0.75rem;
 }
 
 .form-group label {
