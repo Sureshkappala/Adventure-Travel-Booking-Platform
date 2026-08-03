@@ -361,6 +361,8 @@ body.menu-open, html.menu-open {
 
   .menu-toggle {
     display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .navbar {
