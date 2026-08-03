@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Browse Wilderness Sectors inside Climber Dashboard.">
+    <title>Browse Destinations | Adventures Portal</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body style="overflow-y: auto; background-color: var(--color-primary);">
+
+    <!-- MOBILE TOGGLE HEADER -->
+    <div class="db-mobile-header" style="display: none;">
+        <button class="db-hamburger" aria-label="Toggle Menu"><i class="fa-solid fa-bars"></i></button>
+        <a href="studio-portal.html" class="db-mobile-logo">
+            <div class="logo" style="pointer-events: none;"><img src="images/logo.webp" alt="Logo" class="logo-img"></div>
+        </a>
+        <div class="db-mobile-avatar user-avatar" style="width: 32px; height: 32px; border-radius: 50%; background: var(--color-accent-green); color: var(--color-primary); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.85rem;">EX</div>
+    </div>
+    
+    <!-- Sidebar Overlay -->
+    <div class="db-sidebar-overlay"></div>
+
+    <div class="db-container" style="display: flex; min-height: 100vh;">
+        <!-- COLLAPSIBLE SIDEBAR -->
+        <aside class="db-sidebar">
+            <button class="db-sidebar-close" aria-label="Close Menu" style="display: none;"><i class="fa-solid fa-xmark"></i></button>
+            <div style="overflow-y: auto; height: calc(100% - 60px); padding-right: 5px;">
+                <a href="studio-portal.html" class="sidebar-logo" style="text-decoration: none;">
+                    <div class="logo" style="margin: 0 auto 1.5rem auto; justify-content: center;"><img src="images/logo.webp" alt="Logo" class="logo-img"></div>
+                </a>
+                
+                <!-- Group 1: Main -->
+                <div class="sidebar-section-title" style="margin-top: 1rem;">Main</div>
+                <nav class="sidebar-menu">
+                    <a href="studio-portal.html" class="sidebar-link"><i class="fa-solid fa-chart-pie"></i> Control Board</a>
+                    <a href="db-destinations.html" class="sidebar-link active"><i class="fa-solid fa-map-location-dot"></i> Browse Destinations</a>
+                    <a href="db-packages.html" class="sidebar-link"><i class="fa-solid fa-suitcase"></i> Expedition Packages</a>
+                </nav>
+
+                <!-- Group 2: Climbing Milestones -->
+                <div class="sidebar-section-title" style="margin-top: 1rem;">Wilderness Logs</div>
+                <nav class="sidebar-menu">
+                    <a href="permits-visas.html" class="sidebar-link"><i class="fa-solid fa-id-card"></i> Permits & Visas</a>
+                    <a href="gear-checklists.html" class="sidebar-link"><i class="fa-solid fa-list-check"></i> Gear Checklists</a>
+                </nav>
+
+                <!-- Group 3: Training Analytics -->
+                <div class="sidebar-section-title" style="margin-top: 1rem;">Health & Prep</div>
+                <nav class="sidebar-menu">
+                    <a href="cardio-tracker.html" class="sidebar-link"><i class="fa-solid fa-heart-pulse"></i> Cardio Tracker</a>
+                    <a href="sat-communication.html" class="sidebar-link"><i class="fa-solid fa-satellite-dish"></i> SAT Communication</a>
+                </nav>
+            </div>
+            
+            <a href="login.html" class="signout-btn" id="dashboard-logout-btn" onclick="localStorage.clear();"><i class="fa-solid fa-right-from-bracket"></i> Sign Out</a>
+        </aside>
+
+        <!-- MAIN PANEL -->
+        <main class="db-main">
+            <!-- Welcome Hero -->
+            <div class="db-welcome-hero" style="border-radius: var(--border-radius-md); padding: 2rem 2.5rem; margin-bottom: 2rem;">
+                <h1>Wilderness Sectors</h1>
+                <p>Browse active destinations mapped for high-performance guided expeditions.</p>
+            </div>
+
+            <!-- Destinations Grid -->
+            <div class="db-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                
+                <!-- Destination 1 -->
+                <div class="panel-box" style="padding: 0; overflow: hidden; border-radius: var(--border-radius-md); display: flex; flex-direction: column; justify-content: space-between; border: 1px solid var(--color-border-glass);">
+                    <div style="position: relative; height: 180px; overflow: hidden;">
+                        <img src="images/dest-1.webp" alt="Swiss Alps" style="width: 100%; height: 100%; object-fit: cover;">
+                        <span style="position: absolute; top: 1rem; right: 1rem; background: var(--color-accent-orange); color: #000; font-weight: 800; font-size: 0.75rem; padding: 0.25rem 0.75rem; border-radius: 99px; text-transform: uppercase;">Mountain</span>
+                    </div>
+                    <div style="padding: 1.5rem; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between;">
+                        <div>
+                            <h3 style="color: var(--color-text-white); font-size: 1.25rem; font-weight: 700; margin-bottom: 0.5rem; font-family: var(--font-heading);">Swiss Alps Ascent</h3>
+                            <p style="color: var(--color-text-muted); font-size: 0.88rem; line-height: 1.5; margin-bottom: 1.25rem;">Technical mountaineering routes designed for intermediate-to-advanced climbers.</p>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 1rem; margin-top: auto;">
+                            <span style="color: var(--color-accent-green); font-size: 0.85rem; font-weight: 600;"><i class="fa-solid fa-circle-check"></i> Available Sector</span>
+                            <a href="contact.html?dest=Swiss Alps" class="btn btn-primary btn-sm" style="padding: 0.4rem 1rem;">Book Trek</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Destination 2 -->
+                <div class="panel-box" style="padding: 0; overflow: hidden; border-radius: var(--border-radius-md); display: flex; flex-direction: column; justify-content: space-between; border: 1px solid var(--color-border-glass);">
+                    <div style="position: relative; height: 180px; overflow: hidden;">
+                        <img src="images/dest-2.webp" alt="Serengeti" style="width: 100%; height: 100%; object-fit: cover;">
+                        <span style="position: absolute; top: 1rem; right: 1rem; background: var(--color-accent-orange); color: #000; font-weight: 800; font-size: 0.75rem; padding: 0.25rem 0.75rem; border-radius: 99px; text-transform: uppercase;">Savannah</span>
+                    </div>
+                    <div style="padding: 1.5rem; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between;">
+                        <div>
+                            <h3 style="color: var(--color-text-white); font-size: 1.25rem; font-weight: 700; margin-bottom: 0.5rem; font-family: var(--font-heading);">Serengeti Savannah</h3>
+                            <p style="color: var(--color-text-muted); font-size: 0.88rem; line-height: 1.5; margin-bottom: 1.25rem;">Eco-friendly walking safaris through key active preservation sectors.</p>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 1rem; margin-top: auto;">
+                            <span style="color: var(--color-accent-green); font-size: 0.85rem; font-weight: 600;"><i class="fa-solid fa-circle-check"></i> Available Sector</span>
+                            <a href="contact.html?dest=Serengeti Safari" class="btn btn-primary btn-sm" style="padding: 0.4rem 1rem;">Book Trek</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Destination 3 -->
+                <div class="panel-box" style="padding: 0; overflow: hidden; border-radius: var(--border-radius-md); display: flex; flex-direction: column; justify-content: space-between; border: 1px solid var(--color-border-glass);">
+                    <div style="position: relative; height: 180px; overflow: hidden;">
+                        <img src="images/dest-3.webp" alt="Bali" style="width: 100%; height: 100%; object-fit: cover;">
+                        <span style="position: absolute; top: 1rem; right: 1rem; background: var(--color-accent-orange); color: #000; font-weight: 800; font-size: 0.75rem; padding: 0.25rem 0.75rem; border-radius: 99px; text-transform: uppercase;">Tropical</span>
+                    </div>
+                    <div style="padding: 1.5rem; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between;">
+                        <div>
+                            <h3 style="color: var(--color-text-white); font-size: 1.25rem; font-weight: 700; margin-bottom: 0.5rem; font-family: var(--font-heading);">Bali Reef Explorer</h3>
+                            <p style="color: var(--color-text-muted); font-size: 0.88rem; line-height: 1.5; margin-bottom: 1.25rem;">Marine exploration logs, technical diving, and coastal navigation.</p>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 1rem; margin-top: auto;">
+                            <span style="color: var(--color-accent-green); font-size: 0.85rem; font-weight: 600;"><i class="fa-solid fa-circle-check"></i> Available Sector</span>
+                            <a href="contact.html?dest=Bali Explorer" class="btn btn-primary btn-sm" style="padding: 0.4rem 1rem;">Book Trek</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
