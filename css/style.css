@@ -334,6 +334,9 @@ button, input, select, textarea {
   align-items: center;
   justify-content: center;
   transition: var(--transition-normal);
+  padding: 0;
+  margin: 0;
+  line-height: 1;
 }
 
 .menu-toggle:hover {
@@ -589,6 +592,7 @@ body.menu-open, html.menu-open {
 .booking-form .form-group {
   position: relative;
   padding-bottom: 22px; /* Space for the absolute error message */
+  margin-bottom: 0;
 }
 
 .booking-form .error-msg {
@@ -608,6 +612,11 @@ body.menu-open, html.menu-open {
   text-align: left;
   display: flex;
   flex-direction: column;
+  margin-bottom: 1.25rem;
+}
+
+.form-grid-2col {
+  margin-bottom: 1.25rem;
 }
 
 .form-group label {
@@ -1530,6 +1539,7 @@ body.menu-open, html.menu-open {
 
 .contact-form .form-group {
   grid-column: span 1;
+  margin-bottom: 0;
 }
 
 .contact-form .form-group.full-width {
