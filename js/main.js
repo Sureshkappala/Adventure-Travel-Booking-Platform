@@ -824,13 +824,13 @@ function initDashboardRoles() {
                           <td class="text-light-value" data-label="Expedition">Serengeti Safari Group</td>
                           <td data-label="Climber">Alexander Hamilton</td>
                           <td data-label="Value">$15,400 Booking</td>
-                          <td data-label="Action"><span class="badge-status status-active" style="cursor:pointer;" onclick="window.showCustomAlert('Serengeti climbing log updated. Route safe.', 'success')">Inspect</span></td>
+                          <td data-label="Action"><span class="badge-status status-active" style="cursor:pointer;" onclick="window.location.href='404.html'">Inspect</span></td>
                       </tr>
                       <tr>
                           <td class="text-light-value" data-label="Expedition">Patagonia Ridge Climb</td>
                           <td data-label="Climber">Fiona Vance (Leader)</td>
                           <td data-label="Value">$24,800 Booking</td>
-                          <td data-label="Action"><span class="badge-status status-active" style="cursor:pointer;" onclick="window.showCustomAlert('Patagonia ridge climb request approved.', 'success')">Inspect</span></td>
+                          <td data-label="Action"><span class="badge-status status-active" style="cursor:pointer;" onclick="window.location.href='404.html'">Inspect</span></td>
                       </tr>
                   `;
               }

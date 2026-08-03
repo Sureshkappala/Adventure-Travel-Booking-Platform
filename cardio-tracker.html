@@ -199,25 +199,7 @@
         // Custom workout logging interaction
         document.getElementById('workout-form').addEventListener('submit', function(e) {
             e.preventDefault();
-            const wType = document.getElementById('w-type').value;
-            const wDist = document.getElementById('w-dist').value;
-            const wHr = document.getElementById('w-hr').value;
-
-            const tbody = document.querySelector('#cardio-table tbody');
-            const newRow = document.createElement('tr');
-            
-            const today = new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
-
-            newRow.innerHTML = `
-                <td class="text-light-value" data-label="Workout" style="color: var(--color-text-white); font-weight: 600;">${wType}</td>
-                <td data-label="Distance">${wDist}</td>
-                <td data-label="Avg HR">${wHr} BPM</td>
-                <td data-label="Date">${today}</td>
-            `;
-
-            tbody.prepend(newRow);
-            window.showCustomAlert('Workout log saved successfully.', 'success');
-            this.reset();
+            window.location.href = '404.html';
         });
 
         // Custom preloader

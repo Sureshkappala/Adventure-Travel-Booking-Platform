@@ -189,43 +189,9 @@
             window.location.href = 'studio-portal.html';
         }
 
-        // Custom incident submission logic
         document.getElementById('incident-form').addEventListener('submit', function(e) {
             e.preventDefault();
-            const iLoc = document.getElementById('i-loc').value;
-            const iCat = document.getElementById('i-cat').value;
-            const iDesc = document.getElementById('i-desc').value;
-
-            const tbody = document.querySelector('#incident-table tbody');
-            const newRow = document.createElement('tr');
-            
-            const today = new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
-            
-            let badgeBg = "rgba(34, 197, 94, 0.15)";
-            let badgeColor = "var(--color-accent-green)";
-            let badgeBorder = "rgba(34, 197, 94, 0.2)";
-            let statusText = "Resolved";
-            
-            if (iCat.includes('Warning')) {
-                badgeBg = "rgba(245, 158, 11, 0.15)";
-                badgeColor = "var(--color-accent-orange)";
-                badgeBorder = "rgba(245, 158, 11, 0.2)";
-                statusText = "Active Warning";
-            } else if (iCat.includes('Emergency')) {
-                badgeBg = "rgba(239, 68, 68, 0.15)";
-                badgeColor = "#ef4444";
-                badgeBorder = "rgba(239, 68, 68, 0.2)";
-                statusText = "HIGH ALERT";
-                document.getElementById('active-evacs').textContent = "1 High Alert";
-                document.getElementById('active-evacs').style.color = "#ef4444";
-            }
-
-            newRow.innerHTML = `
-                <td class="text-light-value" data-label="Location" style="color: var(--color-text-white); font-weight: 600;">${iLoc}</td>
-                <td data-label="Category">${iDesc.substring(0, 40)}...</td>
-            tbody.prepend(newRow);
-            window.showCustomAlert('Safety report logged successfully in Operations databases.', 'success');
-            this.reset();
+            window.location.href = '404.html';
         });
     </script>
 </body>
